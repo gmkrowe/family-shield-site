@@ -1,0 +1,1489 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Family Shield Financial — Team Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C9A227;--goldd:#9a7d12;--ink:#1a1a1a;--bg:#f6f6f4;--card:#fff;--line:#e3e0d8;--mut:#6b6b6b;}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:18px;}
+body{margin:0;font-family:'Montserrat','Segoe UI',Arial,sans-serif;color:#222;background:var(--bg);font-size:15px;line-height:1.55;}
+a{color:var(--goldd);text-decoration:none;}a:hover{text-decoration:underline;}
+.xref{color:var(--goldd);font-weight:600;}
+.wrap{display:flex;min-height:100vh;}
+nav{position:sticky;top:0;align-self:flex-start;height:100vh;overflow-y:auto;width:262px;flex:none;background:var(--ink);color:#eee;padding-bottom:30px;}
+nav .brand{padding:20px 20px 14px;border-bottom:3px solid var(--gold);}
+nav .brand b{color:var(--gold);font-size:18px;font-weight:800;display:block;line-height:1.15;}
+nav .brand span{color:#cfcfcf;font-size:12px;}
+nav a{display:flex;align-items:center;gap:10px;color:#dcdcdc;padding:9px 20px;font-size:14px;border-left:3px solid transparent;}
+nav a:hover{background:#262626;text-decoration:none;}
+nav a.active{background:#2b2b2b;border-left-color:var(--gold);color:#fff;font-weight:600;}
+nav a .ico{width:18px;text-align:center;}
+main{flex:1;min-width:0;padding-bottom:80px;}
+.hero{background:var(--ink);color:#fff;padding:30px 40px;border-bottom:4px solid var(--gold);}
+.hero h1{margin:0;color:var(--gold);font-size:29px;font-weight:800;}
+.hero p{margin:6px 0 0;color:#e8e8e8;font-size:15px;max-width:760px;}
+.inner{max-width:940px;margin:0 auto;padding:26px 40px;}
+.mapcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:20px;}
+.oneliner{border-left:4px solid var(--gold);background:#FBF7EA;padding:12px 16px;border-radius:6px;margin:16px 0;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:12px;margin:16px 0;}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:4px;transition:.15s;}
+.card:hover{border-color:var(--gold);transform:translateY(-2px);text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.08);}
+.card b{color:var(--ink);}.card span{color:var(--mut);font-size:13px;}
+section.doc,section.tool{background:var(--card);border:1px solid var(--line);border-radius:12px;max-width:940px;margin:22px auto;padding:8px 38px 30px;}
+section h1{color:var(--ink);font-size:24px;border-bottom:3px solid var(--gold);padding-bottom:8px;margin:22px 0 16px;}
+.doc h2{font-size:19px;color:var(--ink);border-left:5px solid var(--gold);padding-left:10px;margin-top:24px;}
+.doc h3{font-size:16px;color:#333;margin-top:18px;}
+.doc table{border-collapse:collapse;width:100%;margin:12px 0;font-size:13.5px;}
+.doc th{background:var(--ink);color:#fff;text-align:left;padding:7px 9px;font-size:13px;}
+.doc td{border:1px solid var(--line);padding:6px 9px;vertical-align:top;}
+.doc tr:nth-child(even) td{background:#faf9f6;}
+.doc blockquote{border-left:4px solid var(--gold);background:#FBF7EA;margin:12px 0;padding:8px 15px;border-radius:6px;color:#444;}
+.doc code{background:#efece4;padding:1px 5px;border-radius:4px;font-size:13px;}
+.doc pre{background:var(--ink);color:#eee;padding:14px;border-radius:8px;overflow:auto;font-size:11px;line-height:1.3;}
+.doc pre code{background:none;color:#eee;}
+.doc hr{border:none;border-top:1px solid var(--line);margin:18px 0;}
+/* pipeline tool */
+.bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:12px 0;}
+button.btn{font-family:inherit;font-size:13px;font-weight:600;padding:8px 13px;border-radius:7px;border:none;background:var(--gold);color:#1a1a1a;cursor:pointer;}
+button.btn:hover{background:#b58f1f;}
+button.ghost{background:#fff;border:1px solid var(--line);color:#444;}
+button.ghost:hover{border-color:var(--gold);}
+input.search{font-family:inherit;font-size:14px;padding:8px 12px;border:1px solid var(--line);border-radius:7px;min-width:200px;}
+select.filter{font-family:inherit;font-size:13px;padding:8px;border:1px solid var(--line);border-radius:7px;}
+.dash{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:14px 0;}
+.tile{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px;text-align:center;}
+.tile .v{font-size:26px;font-weight:800;color:var(--ink);}
+.tile .l{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.4px;margin-top:2px;}
+.tile.g{background:#FBF4DC;border-color:var(--gold);}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:8px 0 4px;}
+@media(max-width:680px){.cols{grid-template-columns:1fr;}}
+.panel{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;}
+.panel h3{margin:0 0 8px;font-size:13px;color:var(--ink);border-left:4px solid var(--gold);padding-left:8px;}
+.kv{display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px dotted #e4e1d8;font-size:13.5px;}
+.board li{font-size:13.5px;margin:3px 0;}
+table.pipe{border-collapse:collapse;width:100%;font-size:13px;}
+table.pipe th{background:var(--ink);color:#fff;padding:6px 7px;text-align:left;position:sticky;top:0;}
+table.pipe td{border:1px solid var(--line);padding:2px 4px;vertical-align:middle;}
+table.pipe input,table.pipe select{font-family:inherit;font-size:12.5px;border:1px solid transparent;background:transparent;width:100%;padding:5px;border-radius:5px;}
+table.pipe input:focus,table.pipe select:focus{border-color:var(--gold);background:#fff;outline:none;}
+.stagesel{font-weight:600;}
+.del{color:#c62828;cursor:pointer;font-weight:700;text-align:center;border:none;background:none;font-size:15px;}
+.exp{cursor:pointer;text-align:center;color:var(--mut);font-weight:700;border:none;background:none;font-size:14px;}
+.detail{background:#FBF7EA;}
+.detail .dwrap{padding:10px 14px;}
+.chk{display:flex;align-items:center;gap:8px;padding:3px 0;font-size:13.5px;}
+.chk input{width:auto;}
+.next{font-size:13px;color:var(--goldd);font-weight:600;margin-top:6px;}
+.scroll{max-height:520px;overflow:auto;border:1px solid var(--line);border-radius:8px;}
+.note{color:var(--mut);font-size:13px;margin-top:8px;}
+.gterm{border-left:3px solid var(--gold);padding:4px 0 4px 12px;margin:12px 0;}
+.gterm .gt{font-weight:700;color:var(--ink);}
+.gterm .gd{font-size:14px;color:#444;}
+.lookup{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0;}
+.lookup input{font-size:16px;padding:10px 14px;border:2px solid var(--gold);border-radius:8px;width:280px;}
+.result{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:14px 0;}
+.result .box{background:#FBF7EA;border:1px solid var(--gold);border-radius:10px;padding:12px 14px;}
+.result .box .lab{font-size:12px;color:var(--mut);text-transform:uppercase;}
+.result .box .val{font-size:20px;font-weight:800;color:var(--ink);}
+.result .box .val.sm{font-size:15px;font-weight:600;}
+table.data{border-collapse:collapse;width:100%;font-size:13px;}
+table.data th{background:var(--ink);color:#fff;padding:6px 8px;text-align:left;position:sticky;top:0;}
+table.data td{border:1px solid var(--line);padding:5px 8px;}
+table.data tr.hit td{background:#FBF7EA;}
+.dlrow{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0;}
+.dlrow a{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;min-width:230px;}
+.dlrow a:hover{border-color:var(--gold);text-decoration:none;}
+.dlrow a b{color:var(--ink);}.dlrow a span{color:var(--mut);font-size:13px;}
+.menu-btn{display:none;}
+@media(max-width:860px){
+ nav{position:fixed;left:-262px;z-index:50;transition:.2s;box-shadow:2px 0 12px rgba(0,0,0,.3);}nav.open{left:0;}
+ .menu-btn{display:flex;position:fixed;top:12px;left:12px;z-index:60;background:var(--ink);color:var(--gold);border:none;border-radius:8px;padding:10px 13px;font-size:18px;cursor:pointer;}
+ .inner,section.doc,section.tool{padding-left:16px;padding-right:16px;}.hero{padding:24px 16px;}
+}
+</style></head>
+<body>
+<button class="menu-btn" onclick="document.querySelector('nav').classList.toggle('open')">&#9776;</button>
+<div class="wrap">
+<nav><div class="brand"><b>FAMILY SHIELD<br>FINANCIAL</b><span>Manager Hub</span></div>
+<a href="index.html" style="display:block;color:#C9A227;padding:10px 20px;font-weight:700;border-bottom:1px solid #333;font-size:13px">&#8599; Agent View (what agents see)</a><a href="#home" data-sec="home"><span class="ico">🏠</span>Overview</a><a href="#pipeline" data-sec="pipeline"><span class="ico">👥</span>Agents & Pipeline</a><a href="#playbook" data-sec="playbook"><span class="ico">📘</span>Master Playbook</a><a href="#system" data-sec="system"><span class="ico">⚙️</span>The System</a><a href="#schedule" data-sec="schedule"><span class="ico">📅</span>21-Day Schedule</a><a href="#scripts" data-sec="scripts"><span class="ico">📞</span>Call Scripts</a><a href="#standards" data-sec="standards"><span class="ico">🤝</span>Standards & Agreement</a><a href="#rhythm" data-sec="rhythm"><span class="ico">⏰</span>Daily Rhythm</a><a href="#templates" data-sec="templates"><span class="ico">💬</span>Message Templates</a><a href="#content" data-sec="content"><span class="ico">🎬</span>Content Batch</a><a href="#video" data-sec="video"><span class="ico">▶️</span>Pre-Call Video</a><a href="#glossary" data-sec="glossary"><span class="ico">📖</span>Glossary</a><a href="#states" data-sec="states"><span class="ico">🗺️</span>State Lookup</a><a href="#downloads" data-sec="downloads"><span class="ico">📁</span>Files</a></nav>
+<main>
+ <div class="hero" id="home"><h1>Family Shield — Manager Hub</h1>
+  <p>Your full cockpit — the whole system plus your live pipeline. <b>This is the manager view.</b> The simple <a href="index.html" style="color:#C9A227">Agent View</a> is what you send to agents.</p></div>
+ <div class="inner">
+  <div class="mapcard"><svg viewBox="0 0 1000 580" xmlns="http://www.w3.org/2000/svg" role="img" style="width:100%;height:auto" font-family="'Segoe UI',Arial,sans-serif">
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#9a9a9a"/></marker>
+<marker id="arrowgold" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#C9A227"/></marker>
+</defs>
+<text x="20" y="34" font-size="14" font-weight="700" fill="#1a1a1a">ENGINE 1 - RECRUITING FUNNEL</text>
+<text x="270" y="34" font-size="12" fill="#6b6b6b">stranger to signed agent</text>
+<rect x="20" y="60" width="150" height="80" rx="10" fill="#fff" stroke="#888" stroke-width="1.5"/>
+<text x="95" y="96" text-anchor="middle" font-size="15" font-weight="700" fill="#1a1a1a">Content</text>
+<text x="95" y="116" text-anchor="middle" font-size="10.5" fill="#6b6b6b">attract - AGENT posts</text>
+<rect x="222.5" y="60" width="150" height="80" rx="10" fill="#fff" stroke="#888" stroke-width="1.5"/>
+<text x="297.5" y="96" text-anchor="middle" font-size="15" font-weight="700" fill="#1a1a1a">Warm DMs</text>
+<text x="297.5" y="116" text-anchor="middle" font-size="10.5" fill="#6b6b6b">&lt;=50/day - book call</text>
+<rect x="425" y="60" width="150" height="80" rx="10" fill="#fff" stroke="#888" stroke-width="1.5"/>
+<text x="500" y="96" text-anchor="middle" font-size="15" font-weight="700" fill="#1a1a1a">Call 1</text>
+<text x="500" y="116" text-anchor="middle" font-size="10.5" fill="#6b6b6b">intro - 5-10 min</text>
+<rect x="627.5" y="60" width="150" height="80" rx="10" fill="#fff" stroke="#888" stroke-width="1.5"/>
+<text x="702.5" y="96" text-anchor="middle" font-size="15" font-weight="700" fill="#1a1a1a">Call 2</text>
+<text x="702.5" y="116" text-anchor="middle" font-size="10.5" fill="#6b6b6b">fit - find the WHY</text>
+<rect x="830" y="60" width="150" height="80" rx="10" fill="#FBF4DC" stroke="#C9A227" stroke-width="2"/>
+<text x="905" y="96" text-anchor="middle" font-size="15" font-weight="700" fill="#1a1a1a">Call 3</text>
+<text x="905" y="116" text-anchor="middle" font-size="10.5" font-weight="700" fill="#9a7d12">offer - SIGN</text>
+<line x1="174" y1="100" x2="218" y2="100" stroke="#9a9a9a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="376.5" y1="100" x2="420" y2="100" stroke="#9a9a9a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="579" y1="100" x2="623" y2="100" stroke="#9a9a9a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="781.5" y1="100" x2="825" y2="100" stroke="#9a9a9a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="318" y="150" width="160" height="24" rx="12" fill="#FBF4DC" stroke="#C9A227" stroke-width="1"/>
+<text x="398" y="166" text-anchor="middle" font-size="10.5" font-weight="600" fill="#9a7d12">pre-call video on booking</text>
+<line x1="398" y1="140" x2="398" y2="150" stroke="#C9A227" stroke-width="1.2"/>
+<path d="M905 140 C 905 200, 915 200, 915 312" fill="none" stroke="#C9A227" stroke-width="2" marker-end="url(#arrowgold)"/>
+<text x="930" y="228" font-size="10.5" font-weight="600" fill="#9a7d12">signed -&gt; Day 0</text>
+<text x="20" y="300" font-size="14" font-weight="700" fill="#1a1a1a">ENGINE 2 - ACTIVATION</text>
+<text x="210" y="300" font-size="12" fill="#6b6b6b">signed to first sale in ~21 days</text>
+<rect x="850" y="320" width="130" height="80" rx="10" fill="#fff" stroke="#888" stroke-width="1.5"/>
+<text x="915" y="356" text-anchor="middle" font-size="15" font-weight="700" fill="#1a1a1a">Sign</text>
+<text x="915" y="376" text-anchor="middle" font-size="10.5" fill="#6b6b6b">Day 0 - book exam</text>
+<rect x="684" y="320" width="130" height="80" rx="10" fill="#fff" stroke="#888" stroke-width="1.5"/>
+<text x="749" y="356" text-anchor="middle" font-size="15" font-weight="700" fill="#1a1a1a">Study</text>
+<text x="749" y="376" text-anchor="middle" font-size="10.5" fill="#6b6b6b">Days 2-10 - shadow</text>
+<rect x="518" y="320" width="130" height="80" rx="10" fill="#fff" stroke="#888" stroke-width="1.5"/>
+<text x="583" y="356" text-anchor="middle" font-size="15" font-weight="700" fill="#1a1a1a">Pass</text>
+<text x="583" y="376" text-anchor="middle" font-size="10.5" fill="#6b6b6b">Day ~10 - exam</text>
+<rect x="352" y="320" width="130" height="80" rx="10" fill="#fff" stroke="#888" stroke-width="1.5"/>
+<text x="417" y="356" text-anchor="middle" font-size="15" font-weight="700" fill="#1a1a1a">Contract</text>
+<text x="417" y="376" text-anchor="middle" font-size="10.5" fill="#6b6b6b">Days 11-14 - arm</text>
+<rect x="186" y="320" width="130" height="80" rx="10" fill="#FBF4DC" stroke="#C9A227" stroke-width="2"/>
+<text x="251" y="356" text-anchor="middle" font-size="15" font-weight="700" fill="#1a1a1a">Hell Week</text>
+<text x="251" y="376" text-anchor="middle" font-size="10" font-weight="700" fill="#9a7d12">Days 14-21 - 1ST SALE</text>
+<rect x="20" y="320" width="130" height="80" rx="10" fill="#fff" stroke="#888" stroke-width="1.5"/>
+<text x="85" y="356" text-anchor="middle" font-size="15" font-weight="700" fill="#1a1a1a">30/60/90</text>
+<text x="85" y="376" text-anchor="middle" font-size="10.5" fill="#6b6b6b">scale - lead</text>
+<line x1="850" y1="360" x2="818" y2="360" stroke="#9a9a9a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="684" y1="360" x2="652" y2="360" stroke="#9a9a9a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="518" y1="360" x2="486" y2="360" stroke="#9a9a9a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="352" y1="360" x2="320" y2="360" stroke="#9a9a9a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="186" y1="360" x2="154" y2="360" stroke="#9a9a9a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M218 400 C 150 470, 14 460, 14 340 C 14 230, 14 180, 95 144" fill="none" stroke="#C9A227" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#arrowgold)"/>
+<text x="250" y="455" font-size="11" font-weight="700" fill="#9a7d12">REFERRAL LOOP</text>
+<text x="250" y="472" font-size="10.5" fill="#6b6b6b">graduates feed the funnel</text>
+</svg>
+</div>
+  <div class="oneliner"><b>Two engines, kept separate.</b> The Funnel turns strangers into signed agents through a 3-call close. Activation turns signed agents into licensed producers with a first sale in ~21 days. Content feeds the top; graduates feed it back through referrals.</div>
+  <div class="grid"><a class="card" href="#pipeline"><b>Agents & Pipeline</b><span>Add & track every agent, live dashboard</span></a><a class="card" href="#playbook"><b>Master Playbook</b><span>The whole business in one read</span></a><a class="card" href="#scripts"><b>Call Scripts</b><span>The 3-call close, word-for-word</span></a><a class="card" href="#schedule"><b>21-Day Schedule</b><span>Sign → licensed → first sale</span></a><a class="card" href="#standards"><b>The Standard</b><span>What we promise + chargeback/rollup</span></a><a class="card" href="#glossary"><b>Glossary</b><span>Every term, in plain English</span></a><a class="card" href="#states"><b>State Lookup</b><span>Type a state → hours, vendor, prints</span></a><a class="card" href="#templates"><b>Message Templates</b><span>Every touchpoint, ready to paste</span></a></div>
+ </div>
+
+ <section id="pipeline" class="tool"><h1>&#x1F465; Agents &amp; Pipeline</h1>
+  <p>Your live agent roster. Add everyone you recruit, set their stage, and click a name to open their 21-day onboarding checklist. The dashboard and leaderboard update instantly. <b>Saved in this browser</b> — use Export to back up or move to another device.</p>
+  <div class="bar">
+   <button class="btn" id="add">+ Add agent</button>
+   <input class="search" id="search" placeholder="Search name / state / source…">
+   <select class="filter" id="fstage"><option value="">All stages</option></select>
+   <button class="ghost btn" id="sample">Load sample</button>
+   <button class="ghost btn" id="exp">Export</button>
+   <button class="ghost btn" id="imp">Import</button>
+   <button class="ghost btn" id="clear">Clear</button>
+   <input type="file" id="impfile" accept=".json,.csv" style="display:none">
+  </div>
+  <div class="dash" id="tiles"></div>
+  <div class="cols">
+   <div class="panel"><h3>STAGE DISTRIBUTION</h3><div id="dist"></div></div>
+   <div class="panel"><h3>🏆 LEADERBOARD</h3><ul class="board" id="board" style="margin:0;padding-left:18px"></ul></div>
+  </div>
+  <h3 style="border:none;font-size:16px;margin:18px 0 6px">Roster</h3>
+  <div class="scroll"><table class="pipe" id="tbl"><thead><tr>
+   <th style="width:26px"></th><th>Name</th><th>Source</th><th style="width:54px">St</th><th style="width:160px">Stage</th><th>Why / Notes</th><th style="width:26px"></th>
+  </tr></thead><tbody></tbody></table></div>
+  <div class="note">Click a row's <b>›</b> to open that agent's onboarding checklist + next action. Stage auto-colors. Everything saves automatically.</div>
+ </section>
+
+ <section id="playbook" class="doc"><h1>📘 Master Playbook</h1><h1>FAMILY SHIELD FINANCIAL — MASTER PLAYBOOK</h1>
+<h3>The complete recruiting + activation operation, start to finish</h3>
+<blockquote>
+<p>This is the one document. Read it top-to-bottom and you understand the whole machine. Every section points to the detail file where the word-for-word scripts and tools live. If you only ever read one file, read this one.</p>
+</blockquote>
+<hr />
+<h2>THE WHOLE THING IN ONE PICTURE</h2>
+<pre><code>                    ┌─────────────────────────────────────────────────────┐
+                    │  ENGINE 1 — RECRUITING FUNNEL  (stranger → signed)  │
+                    └─────────────────────────────────────────────────────┘
+   CONTENT          WARM DMs           CALL 1          CALL 2           CALL 3
+   (attract)   →    (≤50/day)     →    Intro      →    Fit/Discovery →  Offer + Standard
+   AGENT/MENTOR     personalized       5-10 min        20-40 min        15-30 min → SIGN
+   posts            book the call      book Call 2     find the WHY     set standard, sign
+        │                                  │                                   │
+        │                          [pre-call video]                           │
+        │                          sent on booking                            ▼
+        │                                                          ┌──────────────────────┐
+        └──── referrals from grads ◄──────────────────────────────│  ENGINE 2 — ACTIVATION│
+                                                                   │  (signed → first sale)│
+                                                                   └──────────────────────┘
+   DAY 0          DAYS 1-10          DAY ~10        DAYS 11-14        DAYS 14-21       DAY 21+
+   Sign +    →    Study +       →    PASS      →    Contract +   →    HELL WEEK   →    30/60/90
+   schedule       practice exams     the exam       arm (leads,       10-12 hr days    consistency →
+   exam +         + shadow calls                    dialer, CRM)      → FIRST SALE     independence →
+   contract                                                          + referral ask    leadership
+</code></pre>
+<p><strong>The one sentence:</strong> Two engines, kept separate. The Funnel turns strangers into signed agents through a 3-call close. Activation turns signed agents into licensed producers with a first sale in ~21 days. Content feeds the top; graduates feed it back through referrals.</p>
+<hr />
+<h2>PART 1 — THE BRAND</h2>
+<p><strong>Name:</strong> Family Shield Financial · <strong>Footprint:</strong> all 50 states · <strong>Mark:</strong> 🛡️</p>
+<p><strong>What we are:</strong> A nationwide life insurance agency that recruits and develops licensed agents.</p>
+<p><strong>The one line:</strong> <em>"We don't hire you and leave you — we get you licensed, hand you a proven system, and stay on the phone with you until you make money."</em></p>
+<p><strong>Who we recruit:</strong> People with a problem money can solve and the work ethic to solve it. Not "anyone with a pulse."</p>
+<p><strong>Voice:</strong> Plain language, confidence not pressure, zero hype. The brand <em>filters</em> — it doesn't beg. (Matches the content style bible: no income hype, frame-one hook, Montserrat.)</p>
+<p>→ <em>Full detail: <a href="#system">RECRUITING_SYSTEM.md</a> §0</em></p>
+<hr />
+<h2>PART 2 — ENGINE 1: THE RECRUITING FUNNEL</h2>
+<h3>Step 1 — Attract (content)</h3>
+<p>AGENT and MENTOR pillar posts from your content plan do the top-of-funnel work. The real signals in this niche are <strong>saves and DMs</strong>, not public comments — people won't comment publicly about money and family fears. → feeds into <span class="xref">CONTENT_PLAN</span>.</p>
+<h3>Step 2 — Warm DMs (up to 50/day)</h3>
+<p>Personalize the first line every time, one question per message, <strong>the only goal is to book Call 1</strong> — never pitch the business in the DMs. 30 real conversations beat 50 blasts.
+→ <em>Scripts: <a href="#scripts">CALL_SCRIPTS.md</a> §A</em></p>
+<h3>Step 3 — The pre-call video (the multiplier)</h3>
+<p>The moment they book, send the 3-minute "watch before our call" video. It pre-frames the opportunity, filters tire-kickers, and cuts Call 1 in half. The send-line — <em>"if it's a clear no after watching, tell me and I'll free your slot"</em> — filters for you before you spend a minute.
+→ <em>Script: <a href="#video">PRECALL_VIDEO_SCRIPT.md</a></em>  <strong>(action: record it)</strong></p>
+<h3>Step 4 — The 3-Call Close</h3>
+<table>
+<thead>
+<tr>
+<th>Call</th>
+<th>Length</th>
+<th>Goal</th>
+<th>Do NOT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1 — Intro</strong></td>
+<td>5–10 min</td>
+<td>Explain what it is, light qualify, <strong>book Call 2</strong></td>
+<td>Don't close here</td>
+</tr>
+<tr>
+<td><strong>2 — Fit/Discovery</strong></td>
+<td>20–40 min</td>
+<td>Run the discovery loop, confirm fit, mutual yes</td>
+<td>Don't pitch — diagnose</td>
+</tr>
+<tr>
+<td><strong>3 — Offer</strong></td>
+<td>15–30 min</td>
+<td>Make the offer, <strong>set the standard, sign</strong></td>
+<td>Don't sign before they hear the standard</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The discovery loop (heart of Call 2 — your own framework):</strong>
+1. <strong>The Problem</strong> — Why are you really on this call? What's not working?
+2. <strong>The History</strong> — What have you tried / are you doing now? <em>(proves their road won't get them there)</em>
+3. <strong>The Solution</strong> — Here's how <em>this</em> fixes THAT specific problem.
+4. <strong>The Future</strong> — What does life look like once it's solved? <em>(make them say it)</em></p>
+<p>→ <em>Word-for-word for all 3 calls + objection table: <a href="#scripts">CALL_SCRIPTS.md</a> §B–E</em></p>
+<h3>Who's a "good fit" — knockout questions (a "no" ends it)</h3>
+<ul>
+<li>Can fund the start (~$200–500 course + exam + background, plus leads later)?</li>
+<li>Can commit real hours — and do <strong>Hell Week</strong> (a full week of 10–12 hr days)?</li>
+<li>Coachable / accountable without a boss?</li>
+<li>A real <strong>WHY</strong> — a problem they're solving?</li>
+<li>Clean enough background to be licensed?</li>
+</ul>
+<p>→ <em>Full criteria + green/red flags: <a href="#system">RECRUITING_SYSTEM.md</a> §2</em></p>
+<hr />
+<h2>PART 3 — ENGINE 2: ACTIVATION (the 21-day clock)</h2>
+<blockquote>
+<p><strong>The one lever that predicts everything: schedule the state exam on Day 0–1.</strong> A locked exam date with money on it turns "I'll study eventually" into "I test Thursday."</p>
+</blockquote>
+<pre><code>Day 0    Sign + schedule exam + start course + start contracting (SureLC) + start fingerprints if needed
+Day 1    Orientation call, study plan, daily check-ins begin
+Day 2-8  Study + practice exams (target 80%+) + shadow live sales calls
+Day 9-11 PASS the exam
+Day 11-14 Contracting complete → writing numbers; arm leads, CRM, dialer; live test dial
+Day 14-21 HELL WEEK → FIRST SALE + referral ask at graduation
+Day 21+  30/60/90: consistency → independence → leadership
+</code></pre>
+<h3>All-states reality</h3>
+<p>You recruit nationwide, so the licensing path <strong>varies per recruit</strong> — course hours run 0→60 (≈34 states now require <strong>zero</strong>), some states gate on fingerprints, and state processing adds 0–7 days. The agent's part fits in ~7–10 days; slippage is almost always state-side. On Day 0, look up their state's row (10 seconds) → <a href="#states">STATE_LICENSING_TABLE.csv</a> (verify uncertain cells, → <a href="#states">STATE_TABLE_README.md</a>).</p>
+<p><strong>In 0-hour states, push the exam to Day 5–7 — don't let them coast to Day 11.</strong></p>
+<h3>Hell Week (Days 14–21)</h3>
+<p>Compress a month of effort into 7 days while support and motivation peak. Daily: morning huddle → dial block → review → dial block → <strong>supported closes (mentor on every close)</strong> → debrief. First money in week one is the #1 predictor of retention. <strong>Goal: first sale by Day 21.</strong></p>
+<p>→ <em>Hour-by-hour structure + onboarding checklist: <a href="#schedule">RECRUITING_SCHEDULE.md</a> + <a href="#standards">STANDARDS_AND_AGREEMENT.md</a> §3</em></p>
+<hr />
+<h2>PART 4 — THE STANDARD &amp; THE AGREEMENT</h2>
+<p>Set the standard on <strong>Call 3, before the signature.</strong> People who hear it and still sign don't quit in week two; people who flinch were going to quit anyway — better to know now.</p>
+<p><strong>We promise:</strong> licensed in 10–14 days · strong carrier contracts · the full system (leads, scripts, dialer, CRM) · mentor on your first sales · real support through chargeback/rollup — not abandonment.</p>
+<p><strong>You promise:</strong> exam scheduled within 48 hrs · licensed in ~2 weeks, no drifting · finish Hell Week · every call and training, run the script · protect the book (persistency) · coachable and honest.</p>
+<p><strong>The deal is symmetrical: world-class support for world-class effort.</strong></p>
+<p><strong>Agreement must cover plainly</strong> (so nothing surprises them later): chargebacks (advance vs. earned, lapses), rollup (downline debt rolling to upline), 1099 status, comp/advance terms, lead cost, book ownership, data/PII, compliance acknowledgment.</p>
+<p>→ <em>Full standard + chargeback/rollup explained + onboarding checklist + safe income language: <a href="#standards">STANDARDS_AND_AGREEMENT.md</a></em></p>
+<hr />
+<h2>PART 5 — RUNNING IT DAY-TO-DAY</h2>
+<h3>Your daily rhythm (the blocks that make 50 DMs actually happen)</h3>
+<pre><code>8:00a   DM Power Hour      — overnight replies first, then new outreach (log every convo)
+9:00a   Pipeline sweep     — confirm today's calls, send no-show touches + study check-ins
+10:00a  Call block         — Call 1s/2s/3s stacked back-to-back; update tracker between calls
+1:30p   Your production    — your sales + Hell Week support (new agents never close alone)
+7:00p   Evening sweep      — 2nd DM pass (best reply rates), check-in replies, tomorrow's list
+8:00p   Score the day      — 5 min, fill the scoreboard
+</code></pre>
+<p><strong>Outreach before admin. Tracker updates in the moment. Protect the call block. Sunday review is sacred.</strong>
+→ <em><a href="#rhythm">DAILY_RHYTHM.md</a></em></p>
+<h3>Every message ready to paste</h3>
+<p>Booking confirmations + 24h/1h reminders (no-show fix), 3-touch no-show recovery, between-call texts, daily study check-ins, exam-day (incl. the failed-exam rebook text), Hell Week, respectful declines.
+→ <em><a href="#templates">MESSAGE_TEMPLATES.md</a></em></p>
+<h3>The tracker (one row per recruit)</h3>
+<p>Every recruit, every stage, every KPI. Source column tags referrals back to the agent who gave them.
+→ <em><a href="#pipeline">RECRUIT_TRACKER.csv</a></em></p>
+<hr />
+<h2>PART 6 — THE SCOREBOARD (what makes it "VERY clear")</h2>
+<p>Count these. The numbers tell you <em>which engine</em> to fix.</p>
+<p><strong>Funnel:</strong> DMs sent → reply % → Call 1 booked % → C1→C2 % → C2→signed % · <strong>no-show %</strong> (expect 30–50%)
+<strong>Activation:</strong> signed → exam scheduled % → passed % → <strong>first sale in Hell Week %</strong> ← the number that matters</p>
+<p><strong>Weekly review (Sunday, 30 min):</strong> compute the funnel, find the <strong>single worst number</strong> vs last week, change <strong>one</strong> lever that week. Forecast how many land in Hell Week in the next 2 weeks. Confirm AGENT/MENTOR content went out.</p>
+<p><strong>Starting volume targets (recalibrate after 30 days of real data):</strong> 150–250 DMs/wk · 8–12 Call 1s · 4–6 Call 2s · 1–2 signed · 1–2 in Hell Week at any time. <strong>At ≥2 signed/week, switch to cohort onboarding</strong> (start them together, shared Hell Week, class group chat — peer accountability replaces half your check-ins).</p>
+<p>→ <em><a href="#system">RECRUITING_SYSTEM.md</a> §5 + <a href="#rhythm">DAILY_RHYTHM.md</a></em></p>
+<hr />
+<h2>PART 7 — THE SELF-FEEDING LOOP</h2>
+<p>At the <strong>Hell Week graduation debrief</strong>, while the first-sale win is fresh, ask every new agent:</p>
+<blockquote>
+<p>"Who are 2–3 people in your world who'd want what you just did?"</p>
+</blockquote>
+<p>A brand-new agent with a sale on the books is your most credible recruiter, and warm referrals convert far better than cold DMs. Log them as Source = "Referral — [agent]". This question is what turns the funnel into a flywheel.</p>
+<hr />
+<h2>PART 8 — COMPLIANCE (non-negotiable, applies everywhere)</h2>
+<ul>
+<li><strong>No income claims.</strong> Never state or imply a dollar figure in any DM, call, post, or video. FTC requires a reasonable basis + typical-results disclosure. Safest: sell the system and opportunity, never a number. → safe language in <a href="#standards">STANDARDS_AND_AGREEMENT.md</a> §4.</li>
+<li><strong>Testimonials</strong> must be typical or carry a disclosure; paid/affiliated connections disclosed.</li>
+<li><strong>TCPA/DNC:</strong> keep cold outreach in DMs (opt-out friendly); scrub any phone/text lists against DNC. Same discipline as the customer dialer.</li>
+<li><strong>PII/GLBA:</strong> store recruit and client data securely — no SSNs in plain spreadsheets.</li>
+<li><strong>1099 framing:</strong> "contract/partner/agent," never "hire/employee/salary."</li>
+</ul>
+<blockquote>
+<p>Operational guidance, not legal advice. <strong>Action: have a licensed attorney review the agent agreement and income-claim language before scaling.</strong></p>
+</blockquote>
+<hr />
+<h2>THE THREE THINGS STILL ON YOU</h2>
+<ol>
+<li><strong>Record the pre-call video</strong> — script is ready in <a href="#video">PRECALL_VIDEO_SCRIPT.md</a>.</li>
+<li><strong>Pick a booking tool</strong> (Calendly or similar with SMS reminders) and drop the link into the DM bridge message.</li>
+<li><strong>Attorney review</strong> of the agreement + income language.</li>
+</ol>
+<hr />
+<h2>FILE MAP</h2>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>What it holds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MASTER_PLAYBOOK.md</strong></td>
+<td>← you are here. The whole operation in one read.</td>
+</tr>
+<tr>
+<td><span class="xref">README.md</span></td>
+<td>Index / reading order</td>
+</tr>
+<tr>
+<td><a href="#system">RECRUITING_SYSTEM.md</a></td>
+<td>Brand, two engines, fit criteria, KPIs, compliance</td>
+</tr>
+<tr>
+<td><a href="#schedule">RECRUITING_SCHEDULE.md</a></td>
+<td>Day-by-day clock, all-states path, Hell Week</td>
+</tr>
+<tr>
+<td><a href="#scripts">CALL_SCRIPTS.md</a></td>
+<td>DM + 3-call close word-for-word + objections</td>
+</tr>
+<tr>
+<td><a href="#standards">STANDARDS_AND_AGREEMENT.md</a></td>
+<td>Standard, chargeback/rollup, onboarding checklist</td>
+</tr>
+<tr>
+<td><a href="#rhythm">DAILY_RHYTHM.md</a></td>
+<td>Your daily blocks + Sunday review</td>
+</tr>
+<tr>
+<td><a href="#templates">MESSAGE_TEMPLATES.md</a></td>
+<td>Every touchpoint, ready to paste</td>
+</tr>
+<tr>
+<td><a href="#states">STATE_LICENSING_TABLE.csv</a> + <a href="#states">STATE_TABLE_README.md</a></td>
+<td>50-state Day-0 lookup</td>
+</tr>
+<tr>
+<td><a href="#video">PRECALL_VIDEO_SCRIPT.md</a></td>
+<td>The filter video script</td>
+</tr>
+<tr>
+<td><a href="#pipeline">RECRUIT_TRACKER.csv</a></td>
+<td>Live pipeline tracker</td>
+</tr>
+</tbody>
+</table>
+<p><em>Built from frameworks used by successful FFL/IMO operators (Shawn Meaike, FFL Victory Lap hiring scripts) + current state licensing data. Sources cited in each detail file.</em></p></section><section id="system" class="doc"><h1>⚙️ The System</h1><h1>Family Shield Financial — The Recruiting System (Overview)</h1>
+<p>This is the whole machine on one page. Everything else (schedule, scripts, agreement) is just the detail under one of these boxes.</p>
+<hr />
+<h2>0. Brand</h2>
+<p><strong>Name:</strong> Family Shield Financial
+<strong>What we are:</strong> A nationwide (all-states) life insurance agency recruiting and developing licensed agents.
+<strong>Positioning (the one line):</strong> <em>"We don't hire you and leave you — we get you licensed, hand you a proven system, and stay on the phone with you until you make money."</em>
+<strong>Who we recruit:</strong> People with a problem money can solve and the work ethic to solve it — not "anyone with a pulse."
+<strong>Promise of the brand:</strong> Standard + support. High bar to get in, real help once you're in.</p>
+<blockquote>
+<p>Voice rule (matches your content style bible): no hype-claims about income, plain language, confidence not pressure. The brand <em>filters</em>, it doesn't beg.</p>
+</blockquote>
+<hr />
+<h2>1. The Two Engines</h2>
+<p>Most teams fail because they blur these. Keep them separate. Different goals, different metrics, different failure points.</p>
+<h3>ENGINE 1 — RECRUITING FUNNEL (stranger → signed agent agreement)</h3>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Action</th>
+<th>Exit goal</th>
+<th>Owner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Attract</strong></td>
+<td>Post content (your CONTENT_PLAN AGENT/MENTOR pillars)</td>
+<td>Profile visit / reply</td>
+<td>Content engine</td>
+</tr>
+<tr>
+<td><strong>Outreach</strong></td>
+<td>Warm DMs — up to 50/day to non-followers + everyone who engages</td>
+<td>Booked Call 1</td>
+<td>You / setter</td>
+</tr>
+<tr>
+<td><strong>Call 1 — Intro</strong></td>
+<td>What it is + light qualify (5–10 min)</td>
+<td>Booked Call 2</td>
+<td>You</td>
+</tr>
+<tr>
+<td><strong>Call 2 — Fit</strong></td>
+<td>Deep discovery: the problem, the why, the history</td>
+<td>Mutual yes → Call 3</td>
+<td>You</td>
+</tr>
+<tr>
+<td><strong>Call 3 — Offer</strong></td>
+<td>Agent agreement + set the standard</td>
+<td>Signed</td>
+<td>You</td>
+</tr>
+</tbody>
+</table>
+<h3>ENGINE 2 — ACTIVATION (signed → licensed → first sale)</h3>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Action</th>
+<th>Exit goal</th>
+<th>Window</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Onboard</strong></td>
+<td>Schedule exam, start pre-licensing course, start contracting (SureLC)</td>
+<td>Exam date locked</td>
+<td>Day 0–2</td>
+</tr>
+<tr>
+<td><strong>Study</strong></td>
+<td>Course + practice exams, daily check-ins</td>
+<td>Ready to test</td>
+<td>Day 3–10</td>
+</tr>
+<tr>
+<td><strong>License</strong></td>
+<td>Pass state exam</td>
+<td>License # issued</td>
+<td>Day ~10</td>
+</tr>
+<tr>
+<td><strong>Contract</strong></td>
+<td>Carrier appointments complete, writing numbers, lead source + dialer access</td>
+<td>Can write business</td>
+<td>Day 10–14</td>
+</tr>
+<tr>
+<td><strong>Hell Week</strong></td>
+<td>10–12 hr days, on the phones, shadowing closes</td>
+<td><strong>First sale</strong></td>
+<td>Day 14–21</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>2. Who is a "good fit" — the criteria (written down, with teeth)</h2>
+<p>You said "see if they'd be a good fit" — here is fit, defined. Call 2 exists to confirm these. <strong>Knockout questions</strong> (used by top FFL recruiters — short, scripted, intentional):</p>
+<p><strong>Must-haves (knockouts — a "no" ends it):</strong>
+- [ ] Can fund the start: ~$200–500 for pre-licensing course + state exam + background check <em>(and later, leads)</em>. "Are you willing to invest in yourself and fund your business?"
+- [ ] Time: can commit real hours, and can do <strong>Hell Week</strong> (10–12 hr days for one week). "Are you in a position to commit a full week of long days to launch?"
+- [ ] Coachable / accountable: "Are you the kind of person who can hold yourself accountable without a boss standing over you?"
+- [ ] A real <strong>WHY</strong> — a problem they're trying to solve (money, freedom, time, getting out of a job). No why = no fuel.
+- [ ] Clean enough background to be licensed in their state (felonies / certain financial crimes can block licensing).
+- [ ] Reliable phone + internet + willing to be on camera/calls.</p>
+<p><strong>Green flags (lean in):</strong> sales/service/commission background, currently in pain with current job, has run out of options elsewhere, talks about family/people not just money, shows up early, asks good questions.</p>
+<p><strong>Red flags (slow down or pass):</strong> wants guaranteed salary, can't fund the start, "I'll try it on the side and see," argues with the standard before signing, no why, flaky in scheduling.</p>
+<blockquote>
+<p>Top operators are explicit: recruiting is <strong>not</strong> convincing people to quit their job. It's asking simple questions that open a door, then letting the right ones walk through. You qualify <em>hard</em> so activation is easy.</p>
+</blockquote>
+<hr />
+<h2>3. The discovery core (the heart of Call 2)</h2>
+<p>This is the loop you described, formalized. On every fit call you are diagnosing, not pitching:</p>
+<ol>
+<li><strong>The Problem</strong> — <em>Why are you really on this call? What's not working where you are now?</em></li>
+<li><strong>The History</strong> — <em>What have you already tried or are doing now to fix that?</em> (proves their current path won't get them there)</li>
+<li><strong>The Solution</strong> — <em>Here's specifically how this solves THAT problem.</em></li>
+<li><strong>The Future</strong> — <em>What does it look like once that problem is gone?</em> — make <strong>them</strong> say it out loud.</li>
+</ol>
+<p>Find the problem → understand what they've done → show how you solve it → paint the solved future. (Full word-for-word version in <a href="#scripts">CALL_SCRIPTS.md</a>.)</p>
+<hr />
+<h2>4. The Standard (set it before they sign, not after)</h2>
+<p>The single most-skipped step. On <strong>Call 3</strong>, before signature, they hear exactly what's expected. People who hear the standard and still sign don't quit in week two. (Full version in <a href="#standards">STANDARDS_AND_AGREEMENT.md</a>.)</p>
+<p>The standard, in short:
+- Get licensed in <strong>10–14 days</strong> — exam scheduled on day one, no drifting.
+- <strong>Hell Week</strong> is non-negotiable: a full week of 10–12 hr days, first sale is the target.
+- Show up to every call and training. Do the activity. Run the script.
+- Chargeback &amp; rollup terms understood and agreed (so nobody is surprised later).
+- We give world-class support; in return you give world-class effort.</p>
+<hr />
+<h2>5. KPIs — what makes the system "VERY clear"</h2>
+<p>You can't manage what you don't count. Track these weekly in <a href="#pipeline">RECRUIT_TRACKER.csv</a>:</p>
+<p><strong>Funnel metrics</strong>
+- DMs sent / day (target up to 50)
+- DM → reply %
+- Reply → Call 1 booked %
+- Call 1 → Call 2 %
+- Call 2 → signed %
+- <strong>No-show %</strong> (the silent killer — expect 30–50%; have a rebook cadence)</p>
+<p><strong>Activation metrics</strong>
+- Signed → exam scheduled (should be ~100% within 48 hrs)
+- Exam scheduled → passed %
+- Passed → contracted %
+- Contracted → <strong>first sale within Hell Week</strong> %  ← the number that actually matters</p>
+<p>If signed-but-no-sale is high, the leak is activation. If lots of DMs but few Call 1s, the leak is outreach/brand. The KPIs tell you <em>which</em> engine to fix.</p>
+<hr />
+<h2>6. Follow-up &amp; nurture (the leaky-bucket fix)</h2>
+<ul>
+<li><strong>No-show on Call 1/2:</strong> same-day text → rebook. 3 touches over 5 days, then drop to long-term nurture.</li>
+<li><strong>"Not now":</strong> monthly check-in, keep them seeing content. Timing changes; the no isn't permanent.</li>
+<li><strong>Failed exam:</strong> don't release them — rebook the exam, reset study plan, keep momentum.</li>
+<li>Everyone who ever engaged goes into the tracker. Nobody falls through.</li>
+</ul>
+<hr />
+<h2>7. Compliance — non-negotiable rules (read this)</h2>
+<p>Recruiting in this space draws FTC and state scrutiny. Bake these into every DM, call, and post:</p>
+<ul>
+<li><strong>No income promises.</strong> Never state or imply specific earnings ("make $10k/mo") in DMs, calls, or content. The FTC requires a <em>reasonable basis</em> for any income claim, and any earnings example must reflect <strong>typical</strong> results with a clear disclosure if it isn't. Safest path: don't make income claims at all — sell the <em>system and opportunity</em>, not a number.</li>
+<li><strong>Testimonials must be typical</strong> or carry a disclosure, and any paid/affiliated endorser's connection must be disclosed.</li>
+<li><strong>TCPA / DNC:</strong> recruiting outreach by phone/text must respect Do-Not-Call and consent rules. DM outreach to people who can opt out is lower-risk; cold-calling purchased lists is not — scrub against DNC. (Your dialer already enforces DNC + calling hours for customer leads — apply the same discipline to recruit outreach.)</li>
+<li><strong>PII / data security (GLBA / NAIC Model 668):</strong> recruit and client data must be stored securely. Don't keep SSNs or sensitive docs in plain spreadsheets.</li>
+<li><strong>Independent contractor framing:</strong> agents are 1099 independent contractors, not employees — keep "hire/employee/salary" language out of the agreement; use "contract/partner/agent."</li>
+</ul>
+<blockquote>
+<p>This file is operational guidance, not legal advice. Have a licensed attorney review the agent agreement and your income-claim language before scaling.</p>
+</blockquote>
+<hr />
+<h2>Sources</h2>
+<ul>
+<li><a href="https://familyfirstlife.com/agents/">Family First Life — Become an Agent</a> and <a href="https://fflvictorylap.com/hire">FFL Victory Lap — How to Recruit</a> — scripted 5–7 min interview, knockout questions, HCMS/SureLC contracting flow.</li>
+<li><a href="https://www.youtube.com/watch?v=5GJxuIeELwc">Shawn Meaike / FFL recruiting philosophy</a> — "ask simple questions that open doors," judgment over effort, abundance + support culture.</li>
+<li><a href="https://www.smartchoiceagents.com/tips/social-media-online-platforms-recruiting-insurance-producers">Instagram DM outreach for insurance recruiting</a> and <a href="https://www.youtube.com/watch?v=L1rV8hVZ_Jo">How to Recruit 30 Insurance Agents from Instagram</a> — saves/DMs as real signals, reference-their-content reciprocity.</li>
+<li><a href="https://legalclarity.org/ftc-income-claims-rules-and-substantiation-requirements/">FTC income claims rules</a> and <a href="https://www.donotcallprotection.com/blog/i-sell-life-insurance-how-do-i-get-do-not-call-tcpa-compliant">DNC/TCPA for life insurance</a> — compliance basis.</li>
+</ul></section><section id="schedule" class="doc"><h1>📅 21-Day Schedule</h1><h1>Family Shield Financial — The Schedule (Day-by-Day)</h1>
+<p>The clock. From "signed agent agreement" (Day 0) to <strong>first sale</strong>. Target: licensed in <strong>10–14 days</strong>, first sale by <strong>Day 21</strong>.</p>
+<blockquote>
+<p><strong>The one lever that predicts everything:</strong> schedule the state exam on <strong>Day 0–1</strong>. A locked exam date with money on it is what turns "I'll study eventually" into "I test Thursday." Drifting on this is the #1 reason recruits stall. Set it first.</p>
+</blockquote>
+<hr />
+<h2>All-states reality check (read once)</h2>
+<p>You're recruiting nationwide, so the licensing path is <strong>not identical</strong> per recruit. Three things vary by state:</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Range</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pre-licensing course hours</strong></td>
+<td>0 → 60 hrs</td>
+<td>TX, PA, AZ = <strong>0 hrs</strong> (can test almost immediately) · IL = 40 · FL = 60 · CA = 12 hrs ethics (2026)</td>
+</tr>
+<tr>
+<td><strong>Background check / fingerprints</strong></td>
+<td>same-day → 1–2 weeks</td>
+<td>Some states clear instantly; others gate the license on prints</td>
+</tr>
+<tr>
+<td><strong>State processing after exam</strong></td>
+<td>hours → ~1 week</td>
+<td>License # may issue same day or take days</td>
+</tr>
+</tbody>
+</table>
+<p><strong>What this means for the 10–14 day promise:</strong> the <em>agent's</em> part (study, pass) fits in ~7–10 days easily. The slippage is almost always <strong>state-side</strong> (prints/processing), not effort-side. Tell every recruit: <em>"Your job is done in 10 days. The state's clock is the only thing that can add a few days — and we start it on day one so it never holds you up."</em></p>
+<p><strong>Per-recruit, on Day 0 you look up their state's:</strong> required course hours, whether fingerprints are needed, and exam scheduling provider (Prometric / PSI / Pearson VUE). Put it in their tracker row. (Most carriers contract via <strong>SureLC</strong>; FFL-style onboarding triggers <strong>HCMS + SureLC</strong> invites.)</p>
+<hr />
+<h2>The 14-day licensing sprint</h2>
+<h3>Day 0 — Sign day (same day as Call 3)</h3>
+<ul>
+<li>Welcome packet sent. Agent agreement signed (DocuSign or similar).</li>
+<li><strong>Look up their state requirements</strong> (hours, prints, provider) → tracker.</li>
+<li><strong>Schedule the state exam</strong> for ~Day 9–11. Pay/register now.</li>
+<li>Enroll in pre-licensing course (state-approved; e.g. ExamFX / XCEL / Kaplan).</li>
+<li>Start fingerprints/background check if their state requires it (do it TODAY — longest pole).</li>
+<li>Send <strong>SureLC / contracting invite</strong> so carrier appointments run in parallel with studying.</li>
+<li>Add to group chat / community. First win: they feel like they're already on the team.</li>
+</ul>
+<h3>Day 1 — Orientation</h3>
+<ul>
+<li>30-min onboarding call: walk the schedule, set the standard again, confirm exam date.</li>
+<li>Give the study plan: daily course hours + practice-exam target (pass at 80%+ on practice before real exam).</li>
+<li>Daily check-in cadence agreed (text or quick call every day).</li>
+</ul>
+<h3>Days 2–8 — Study block</h3>
+<ul>
+<li>Course hours daily (front-load if their state requires many hours).</li>
+<li>Practice exams starting Day 4. Track scores in tracker.</li>
+<li>Daily accountability check-in. Watch for drift — if they miss a day, call, don't text.</li>
+<li>Begin <strong>shadowing</strong>: have them listen to live sales calls now so the product makes sense before they're licensed.</li>
+</ul>
+<h3>Days 9–11 — Pass</h3>
+<ul>
+<li>Sit the exam. (If practice scores aren't 80%+, push exam 2–3 days rather than burn the attempt — but only with cause, not drift.)</li>
+<li><strong>Passed → license # issued</strong> (timing per state).</li>
+<li>If failed: rebook immediately, reset study plan, keep momentum. Do not release.</li>
+</ul>
+<h3>Days 11–14 — Contract &amp; arm</h3>
+<ul>
+<li>Confirm SureLC carrier appointments complete → <strong>writing numbers</strong> issued.</li>
+<li>Set up: lead source, CRM, <strong>dialer access</strong> (your Family Shield dialer), scripts, calendar.</li>
+<li>Final readiness check: can they log in, pull a lead, and dial? Do a live test dial together.</li>
+<li><strong>Green light for Hell Week.</strong></li>
+</ul>
+<hr />
+<h2>Hell Week (Days 14–21) — the activation crucible</h2>
+<p>The point of Hell Week: compress a month of normal effort into 7 days so the new agent gets a <strong>first sale</strong> while motivation and support are at their peak. First money in week one is the single best predictor of retention.</p>
+<p><strong>Daily structure (10–12 hr day):</strong>
+| Block | Hours | Activity |
+|---|---|---|
+| Morning huddle | 0.5 | Goals, role-play one objection, energy |
+| Dial block 1 | 3 | Live dials / appointments set |
+| Lunch + review | 1 | Listen back to a call, fix one thing |
+| Dial block 2 | 3 | Live dials / presentations |
+| Close support | 2–3 | You/mentor on the line for every close ("three-way close") |
+| Debrief | 0.5 | Numbers logged, tomorrow's plan, one lesson |</p>
+<p><strong>Rules during Hell Week:</strong>
+- Every close is supported — new agent never closes alone in week one.
+- Numbers logged daily in the tracker (dials, contacts, appointments, presentations, sales).
+- One coaching point per day — not ten. Fix one thing at a time.
+- <strong>Goal: first sale by Day 21.</strong> Hitting it is the graduation moment.</p>
+<p><strong>End of Hell Week:</strong> debrief, celebrate the first sale publicly (great content + recruiting proof), and roll them into the 30/60/90 plan.</p>
+<p><strong>The referral ask (do it AT the graduation debrief, every time):</strong></p>
+<blockquote>
+<p>"Who are 2–3 people in your world who'd want what you just did?"</p>
+</blockquote>
+<p>Ask it while the win is fresh — a brand-new agent with a first sale is your most credible recruiter, and warm referrals convert far better than cold DMs. Log the names in the tracker with Source = "Referral — [agent name]". This one question is what makes the machine self-feeding.</p>
+<hr />
+<h2>After Hell Week — 30/60/90 (don't skip this)</h2>
+<p>Your original plan ended at first sale. This is where chargebacks and quitters come from if you stop here.</p>
+<ul>
+<li><strong>Days 21–30:</strong> consistency — daily activity minimums, 2nd–4th sales, persistency habits (good business stays on the books = fewer chargebacks).</li>
+<li><strong>Days 30–60:</strong> independence — closing solo, building their own pipeline, first referrals.</li>
+<li><strong>Days 60–90:</strong> leadership track — top performers start learning to recruit. Your team compounds when agents become recruiters.</li>
+</ul>
+<hr />
+<h2>The clock on one line</h2>
+<pre><code>Day 0   Sign + schedule exam + start course + start contracting
+Day 1   Orientation, study plan, daily check-ins begin
+Day 2-8 Study + practice exams + shadow live calls
+Day 9-11 PASS the exam
+Day 11-14 Contract complete, writing #s, dialer/leads armed
+Day 14-21 HELL WEEK → FIRST SALE
+Day 21+  30/60/90: consistency → independence → leadership
+</code></pre>
+<hr />
+<h2>Sources</h2>
+<ul>
+<li><a href="https://insurance.aceable.com/resources/pre-license/how-long-does-it-take-to-get-your-pennsylvania-insurance-license/">Pre-licensing timeline &amp; hours by state</a> and <a href="https://www.examfx.com/insurance-prelicensing-training/view-insurance-state-requirements/california-insurance-prelicensing-requirements">ExamFX state requirements</a> — 2–3 week fast track is realistic; hours vary 0–60 by state (TX/PA/AZ 0, FL 60, CA 12 ethics 2026).</li>
+<li><a href="https://fflvictorylap.com/hire">FFL agent onboarding (HCMS + SureLC)</a> — contracting runs in parallel with licensing.</li>
+</ul></section><section id="scripts" class="doc"><h1>📞 Call Scripts</h1><h1>Family Shield Financial — Scripts (DM → 3-Call Close)</h1>
+<p>Word-for-word frameworks. Don't read them robotically — internalize the <em>intent</em> of each step. The whole funnel is: <strong>attract → DM → Call 1 (intro) → Call 2 (fit/discovery) → Call 3 (offer).</strong></p>
+<blockquote>
+<p>Compliance reminder on every line below: <strong>no income promises</strong>, no "make $X." Sell the opportunity, the system, and the support — never a number.</p>
+</blockquote>
+<hr />
+<h2>A. Warm DM outreach (up to 50/day)</h2>
+<p>Target: people who engage with your content + relevant non-followers. The signal that works is <strong>reference something specific about them</strong> — it triggers reciprocity and proves you're a human, not a blast.</p>
+<p><strong>Opener (after they engage or follow):</strong></p>
+<blockquote>
+<p>"Hey [name] — appreciate you following along. Quick one: are you in [their field] full-time right now, or open to other things?"</p>
+</blockquote>
+<p><strong>If they reply / engaged with an AGENT or MENTOR post:</strong></p>
+<blockquote>
+<p>"Saw you [liked the post about getting licensed / commented on the agent video]. Out of curiosity — what made that one catch your eye?"</p>
+</blockquote>
+<p><strong>Bridge to a call (once there's a back-and-forth):</strong></p>
+<blockquote>
+<p>"Honestly easier to explain on a quick call than type it all out. I do 10-min intro calls to see if it's even a fit both ways — want me to send a couple times?"</p>
+</blockquote>
+<p><strong>DM rules:</strong>
+- Personalize the first line every time. No copy-paste blasts (kills reply rate + looks spammy).
+- One question per message. Make it easy to reply.
+- Goal of the DM is <strong>one thing</strong>: book Call 1. Don't pitch the business in the DMs.
+- Track every conversation in the tracker. Follow up twice if no reply, then let content keep warming them.
+- Up to 50/day, but personalized &gt; volume. 30 real conversations beat 50 blasts.</p>
+<hr />
+<h2>B. CALL 1 — Intro (5–10 min)</h2>
+<p><strong>Goal:</strong> explain what it is + light qualify + book Call 2. <strong>Do NOT close here.</strong> Top recruiters keep this to 5–7 minutes and intentional.</p>
+<p><strong>1. Frame (30 sec)</strong></p>
+<blockquote>
+<p>"Thanks for hopping on. This is a quick one — I just want to tell you what we actually do, ask you a couple things, and if it makes sense we'll set a longer call to go deeper. Fair?"</p>
+</blockquote>
+<p><strong>2. What it is (1–2 min) — plain, no hype</strong></p>
+<blockquote>
+<p>"We're Family Shield Financial. We help families protect their income with life insurance, and we build licensed agents to do that. It's a 1099 commission role — you get licensed, we hand you a proven system and leads, and we stay on the phone with you until you're making money. It's not a salary job and it's not for everyone — that's kind of the point of these calls."</p>
+</blockquote>
+<p><strong>3. Light qualify — knockout questions (2–3 min)</strong></p>
+<blockquote>
+<ul>
+<li>"What's got you open to something new right now?" <em>(listen for the WHY)</em></li>
+<li>"Are you in a spot where you could invest a little in yourself to get licensed and started?"</li>
+<li>"Are you someone who can hold themselves accountable without a boss on top of you?"</li>
+</ul>
+</blockquote>
+<p><strong>4. Book Call 2 (1 min)</strong></p>
+<blockquote>
+<p>"Here's how I run it — I don't offer anyone a spot on a first call. Next step is a longer call where we go deep on your situation and whether this actually solves something for you, and you grill me too. If after that we both feel it, there's a third call where I'd make you an offer. Sound fair? Let's get the next one on the calendar."</p>
+<p>If they're clearly unqualified (won't invest, wants salary, no why): be honest and kind — "I don't think this is the right fit, and I'd rather tell you straight." A clean no protects your time.</p>
+</blockquote>
+<hr />
+<h2>C. CALL 2 — Fit / Discovery (the most important call, 20–40 min)</h2>
+<p><strong>Goal:</strong> run the discovery loop, confirm the fit criteria, get a mutual yes. This is where you <strong>find the problem and why they're on the call</strong>, exactly as you described. You talk ~30%, they talk ~70%.</p>
+<h3>Step 1 — THE PROBLEM (why are they really here?)</h3>
+<blockquote>
+<ul>
+<li>"So tell me — what's actually going on that's got you looking? What's not working where you're at?"</li>
+<li>"If nothing changed in the next year, where does that leave you?"</li>
+<li>"What would have to be different for you to feel like you're winning?"</li>
+</ul>
+</blockquote>
+<p><em>Dig until you hit the real problem — money, time, freedom, dead-end job, providing for family. Write it down. This is the fuel for the whole journey.</em></p>
+<h3>Step 2 — THE HISTORY (what have they tried / are doing?)</h3>
+<blockquote>
+<ul>
+<li>"What have you already tried to fix that?"</li>
+<li>"What are you doing right now for money, and what's the ceiling on it?"</li>
+<li>"Why hasn't [current path] gotten you there?"</li>
+</ul>
+</blockquote>
+<p><em>This proves to THEM that their current road won't reach their goal — without you having to say it.</em></p>
+<h3>Step 3 — THE SOLUTION (connect it to THEIR problem)</h3>
+<blockquote>
+<p>"Okay — based on what you just told me, here's specifically how this fixes that. You said [their problem]. With us, [the exact part of the system that solves it]. You get licensed in about two weeks, we hand you leads and a script, and we're on the phone with you for your first sales. That directly hits the [money/time/freedom] thing you described."</p>
+</blockquote>
+<p><em>Tailor it to what they said. Don't give the generic pitch — give the pitch shaped like their problem.</em></p>
+<h3>Step 4 — THE FUTURE (make them say it)</h3>
+<blockquote>
+<ul>
+<li>"Let's say six months from now this worked. What's different in your life?"</li>
+<li>"What does it mean for [their family / their why] if you pull that off?"</li>
+</ul>
+</blockquote>
+<p><em>When they describe the solved future in their own words, they've sold themselves. You just confirmed the fit.</em></p>
+<h3>Step 5 — Confirm fit + tee up the offer</h3>
+<blockquote>
+<p>"Honestly, based on everything — I think you could do this, and I think it solves the [problem] you came in with. The last step is a call where I lay out the actual offer, the agreement, and exactly what's expected on both sides. Before that call, I need you to be sure you want it, because when I make the offer I'm betting on you. Are you in for that conversation?"</p>
+<p>If they're not a fit, say so here. Better an honest no on Call 2 than a quitter in week two.</p>
+</blockquote>
+<hr />
+<h2>D. CALL 3 — Offer + Set the Standard (15–30 min)</h2>
+<p><strong>Goal:</strong> make the offer, set the standard <em>before</em> signing, sign the agreement. (Full standard + agreement terms in <a href="#standards">STANDARDS_AND_AGREEMENT.md</a>.)</p>
+<p><strong>1. Recap their why (2 min)</strong></p>
+<blockquote>
+<p>"Before anything — remind me why you're doing this." <em>(Get them to restate the problem/why. Anchors the whole call in their motivation.)</em></p>
+</blockquote>
+<p><strong>2. The offer (3 min)</strong></p>
+<blockquote>
+<p>"Here's what I'm offering you: a spot as a licensed agent with Family Shield Financial. We get you licensed in 10–14 days, contract you with our carriers, hand you the system, leads, and a dialer, and we personally work your first sales with you in Hell Week. You're a 1099 partner — you own your business, we give you the machine and the mentorship."</p>
+</blockquote>
+<p><strong>3. Set the standard — BEFORE the signature (5 min)</strong></p>
+<blockquote>
+<p>"And here's what I expect in return, because I only bet on people who'll bet on themselves:
+- You schedule your exam in the next 48 hours and you get licensed in about two weeks. No drifting.
+- Hell Week is real — one week of 10–12 hour days. That's where your first sale comes from. Non-negotiable.
+- You show up to every call and training, you run the script, you do the activity.
+- You understand how chargebacks and rollup work <em>(walk them through it now — see agreement)</em> so nothing surprises you later.
+- In exchange, I give you everything I've got. I don't leave people hanging.
+Can you commit to that standard?"</p>
+</blockquote>
+<p><em>People who hear the standard and still say yes don't quit. People who flinch here were going to quit in week two anyway — better to find out now.</em></p>
+<p><strong>4. Close / sign (5 min)</strong></p>
+<blockquote>
+<p>"Then let's make it official."
+- Send the agreement (DocuSign). Sign on the call if possible.
+- Immediately: schedule the exam, send course + SureLC links, add to the team chat.
+- "Welcome to Family Shield. Day one starts now — let's get your exam booked before we hang up."</p>
+</blockquote>
+<hr />
+<h2>E. Objection handling (quick reference)</h2>
+<table>
+<thead>
+<tr>
+<th>Objection</th>
+<th>Response (intent: empathize → reframe → re-ask)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>"I need to think about it."</strong></td>
+<td>"Totally fair. Usually 'think about it' means there's one specific thing — is it the money to start, the time, or whether you can do it? Let's talk about that one."</td>
+</tr>
+<tr>
+<td><strong>"I don't have the money to get licensed."</strong></td>
+<td>"I hear you. The reason it costs a little is that it's a real license and a real business, not a gig. If [their why] matters enough, is the few hundred the real blocker, or is it something else?" <em>(Don't fund them — qualify the commitment.)</em></td>
+</tr>
+<tr>
+<td><strong>"Is this MLM / pyramid?"</strong></td>
+<td>"No. You make money selling insurance to families who need it — full stop. You can build a team later if you want, but you eat off your own sales from week one."</td>
+</tr>
+<tr>
+<td><strong>"I can only do it part-time."</strong></td>
+<td>"A lot of people start while working. But Hell Week needs a full week of long days to get your first sale — can you carve that out? After that we talk schedule."</td>
+</tr>
+<tr>
+<td><strong>"I've never done sales."</strong></td>
+<td>"Most of our best agents hadn't. That's why there's a system and why we're on the calls with you. I'm not looking for experience, I'm looking for coachable and hungry — are you both?"</td>
+</tr>
+<tr>
+<td><strong>"What if I fail?"</strong></td>
+<td>"Then we rebook and go again — I don't release people who are putting in the work. The only way to fail is to quit on the activity."</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Sources</h2>
+<ul>
+<li><a href="https://fflvictorylap.com/hire">FFL hiring scripts &amp; knockout questions</a> — scripted, intentional 5–7 min intro; "willing to invest in yourself," "hold yourself accountable" knockouts.</li>
+<li><a href="https://www.youtube.com/watch?v=5GJxuIeELwc">Shawn Meaike on recruiting</a> — "ask simple questions that open doors," don't convince people to quit their jobs.</li>
+<li><a href="https://influenceflow.io/resources/instagram-dm-outreach-script-the-complete-guide-for-creators-in-2026/">Instagram DM reciprocity for recruiting</a> — reference something specific; one ask per message; DMs/saves are the real signal.</li>
+</ul></section><section id="standards" class="doc"><h1>🤝 Standards & Agreement</h1><h1>Family Shield Financial — Standards, Agreement &amp; Onboarding</h1>
+<p>What "setting the standard" actually contains, the agreement terms to cover (chargeback + rollup), and the onboarding checklist so nobody falls through.</p>
+<blockquote>
+<p>Not legal advice. Have a licensed attorney review the actual signed agreement and any income-claim language before you use it at scale.</p>
+</blockquote>
+<hr />
+<h2>1. The Standard (the culture contract)</h2>
+<p>Set this on Call 3 <em>before</em> signing, and repeat it at orientation. This is the bar that keeps quitters out and producers in.</p>
+<p><strong>What we promise the agent:</strong>
+- Get you licensed in 10–14 days.
+- Contract you with strong carriers (competitive comp).
+- Hand you a proven system: leads, scripts, dialer, CRM.
+- Personal mentorship — we're on your first sales with you (Hell Week three-way closes).
+- Real support through chargeback/rollup issues, not abandonment.</p>
+<p><strong>What the agent promises us:</strong>
+- Schedule the exam within 48 hours of signing. Licensed in ~2 weeks. No drifting.
+- Complete <strong>Hell Week</strong> — one week, 10–12 hr days. First sale is the target.
+- Attend every training and team call. Run the script. Hit daily activity minimums.
+- Protect the book: write quality business and serve clients so it stays on the books (persistency).
+- Coachable, accountable, honest. Bet on yourself the way we're betting on you.</p>
+<blockquote>
+<p>The deal is symmetrical: <strong>world-class support for world-class effort.</strong> State it that way.</p>
+</blockquote>
+<hr />
+<h2>2. Agreement terms to cover (so nothing surprises them later)</h2>
+<p>You specifically wanted the agreement to help with <strong>chargebacks and rollup</strong>. Cover these plainly on Call 3 — surprise on these is what creates resentment and quitting.</p>
+<h3>Chargebacks — explain in plain English</h3>
+<ul>
+<li>Carriers often <strong>advance</strong> a chunk of the first-year commission up front (e.g., 6–9 months advanced).</li>
+<li>If the policy <strong>cancels or lapses</strong> before that advance is "earned out," the carrier <strong>charges back</strong> the unearned portion — the agent owes it back.</li>
+<li><strong>How we protect the agent:</strong></li>
+<li>Train to write <strong>quality, affordable business</strong> the client will keep (right product, right budget) — the single biggest chargeback defense.</li>
+<li>Teach persistency habits: confirm the draft date, do the welcome/retention call, make sure the first payment clears.</li>
+<li>Be transparent about advance vs. as-earned options so a new agent can choose lower-risk as-earned while learning if they want.</li>
+<li>A clear written policy on how team handles a chargeback balance (no hidden surprises).</li>
+</ul>
+<h3>Rollup ("roll-up") — explain in plain English</h3>
+<ul>
+<li>In a hierarchy, if a downline agent leaves owing a chargeback balance the carrier can't collect, that debt can <strong>"roll up"</strong> to the upline who contracted them.</li>
+<li><strong>How we handle it as a team:</strong> explain it openly, set expectations about debt responsibility, and use it as the <em>reason</em> we hold a high standard at recruiting — we'd rather pass on a bad fit than carry their rollup. (This is also why the knockout questions and Hell Week exist: they prevent the situation that creates rollup.)</li>
+</ul>
+<h3>Other agreement essentials</h3>
+<ul>
+<li><strong>1099 independent contractor</strong> status (not employee — no salary, no "hire" language).</li>
+<li>Commission/comp level and advance terms in writing.</li>
+<li>Lead cost responsibility (agent funds their leads).</li>
+<li>Ownership of book / what happens if they leave.</li>
+<li>Confidentiality + data handling (client PII, GLBA).</li>
+<li>Compliance acknowledgment (no false income claims, DNC/TCPA, carrier rules).</li>
+</ul>
+<hr />
+<h2>3. Onboarding checklist (Day 0 — run every time)</h2>
+<p>Copy this per recruit into their tracker notes:</p>
+<pre><code>[ ] Agreement signed (DocuSign)
+[ ] State requirements looked up (course hours / fingerprints / exam provider)
+[ ] State exam SCHEDULED (~Day 9–11) and paid
+[ ] Pre-licensing course enrolled (state-approved provider)
+[ ] Background check / fingerprints started (if state requires)
+[ ] SureLC / contracting invite sent (carrier appointments)
+[ ] Added to team group chat / community
+[ ] Orientation call booked (Day 1)
+[ ] Daily check-in cadence agreed
+[ ] Study plan + practice-exam target (80%+) given
+[ ] Shadowing scheduled (listen to live calls during study week)
+</code></pre>
+<p>Then before Hell Week:</p>
+<pre><code>[ ] Exam PASSED, license # recorded
+[ ] Carrier appointments complete, writing numbers issued
+[ ] Lead source set up
+[ ] CRM access
+[ ] Dialer access (Family Shield dialer) + test dial done together
+[ ] Scripts delivered, one role-play completed
+[ ] Hell Week dates confirmed on calendar
+</code></pre>
+<hr />
+<h2>4. Income-claim safe language (use everywhere)</h2>
+<p>Instead of numbers, say:
+- "Commission-based — what you earn depends on your effort and results."
+- "We give you the system and the support; the work is on you."
+- "Top agents do well, but results vary and aren't guaranteed."</p>
+<p>Never: specific dollar figures, "replace your income in X weeks," "guaranteed," ranking screenshots without a typical-results disclosure. (FTC: any income claim needs a reasonable basis and must reflect typical results.)</p>
+<hr />
+<h2>Sources</h2>
+<ul>
+<li><a href="https://legalclarity.org/ftc-income-claims-rules-and-substantiation-requirements/">FTC income-claim substantiation rules</a> — reasonable basis + typical-results disclosure.</li>
+<li><a href="https://familyfirstlife.com/agents/">FFL agent onboarding (HCMS/SureLC), chargeback/advance norms</a> — contracting and advance-commission structure context.</li>
+<li><a href="https://www.bluefireinsurance.com/knowledge-center/independent-agent/navigating-regulatory-compliance-independent-insurance-agent/">Independent agent compliance (1099, GLBA/PII)</a>.</li>
+</ul></section><section id="rhythm" class="doc"><h1>⏰ Daily Rhythm</h1><h1>Family Shield Financial — Your Daily Operating Rhythm</h1>
+<p>The schedule covers the recruit's 21 days. This covers <strong>your</strong> day — because the 50 DMs and the check-ins only happen if they have a time slot, not a "when I get to it."</p>
+<p>Adjust the clock times to your life; keep the <strong>blocks and their order</strong>. The order matters: outreach happens before the day can eat you.</p>
+<hr />
+<h2>The daily blocks</h2>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>Time</th>
+<th>What happens</th>
+<th>Non-negotiable output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. DM Power Hour</strong></td>
+<td>8:00–9:00a</td>
+<td>New outreach: reply to overnight engagement first (hottest leads), then new personalized DMs</td>
+<td><strong>DMs sent + every convo logged in tracker</strong></td>
+</tr>
+<tr>
+<td><strong>2. Pipeline sweep</strong></td>
+<td>9:00–9:30a</td>
+<td>Tracker top-to-bottom: today's calls confirmed, no-show touches sent, study check-in texts out</td>
+<td>Zero rows untouched &gt; 48 hrs</td>
+</tr>
+<tr>
+<td><strong>3. Call block</strong></td>
+<td>10:00a–12:30p</td>
+<td>Call 1s / Call 2s / Call 3s, stacked back-to-back (energy compounds)</td>
+<td>Calls done + tracker updated <em>between</em> calls, not "later"</td>
+</tr>
+<tr>
+<td><strong>4. Your own production</strong></td>
+<td>1:30–4:30p</td>
+<td>Your sales / Hell Week support / three-way closes with new agents</td>
+<td>New agents never close alone</td>
+</tr>
+<tr>
+<td><strong>5. Evening sweep</strong></td>
+<td>7:00–8:00p</td>
+<td>Second DM pass (evening reply rates are best), study-window check-in replies, tomorrow's call list</td>
+<td>Tomorrow already scheduled before you sleep</td>
+</tr>
+<tr>
+<td><strong>6. Score the day</strong></td>
+<td>8:00–8:15p</td>
+<td>Log the day's numbers (below). 5 minutes, every day</td>
+<td>The scoreboard row filled in</td>
+</tr>
+</tbody>
+</table>
+<p><strong>During an active Hell Week</strong>, block 4 expands and block 3 shrinks — Hell Week agents outrank new recruiting calls. One first-sale agent recruits better than five cold DMs.</p>
+<hr />
+<h2>The daily scoreboard (15 numbers max, 5 minutes)</h2>
+<p>Keep a running sheet (or add a tab to the tracker). Per day:</p>
+<pre><code>DMs sent | Replies | Calls booked | C1 done | C2 done | C3 done | Signed
+No-shows | Exams scheduled | Exams passed | Agents in study | Agents in Hell Week | Sales (team) | Sales (yours)
+</code></pre>
+<hr />
+<h2>The weekly review (Sunday, 30 minutes)</h2>
+<p>Once a week, compute the funnel and find THE leak — fix one thing per week, not five:</p>
+<ol>
+<li><strong>Funnel math:</strong> DM→reply %, reply→booked %, booked→C1 show %, C1→C2 %, C2→signed %.</li>
+<li><strong>Activation math:</strong> signed→exam scheduled %, exam→passed %, passed→first sale %.</li>
+<li><strong>Find the worst number</strong> vs last week. That's the only thing you change this week (script tweak, template tweak, more volume — one lever).</li>
+<li><strong>Pipeline forecast:</strong> how many in each stage right now → how many agents land in Hell Week in the next 2 weeks?</li>
+<li><strong>Content check:</strong> did this week's AGENT/MENTOR posts go out? (Top of funnel starves silently — see <span class="xref">CONTENT_PLAN</span>.)</li>
+</ol>
+<hr />
+<h2>Weekly volume targets (starting point — recalibrate after 30 days of data)</h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Target/week</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DMs sent</td>
+<td>150–250 (quality &gt; the 50/day cap)</td>
+</tr>
+<tr>
+<td>Call 1s held</td>
+<td>8–12</td>
+</tr>
+<tr>
+<td>Call 2s held</td>
+<td>4–6</td>
+</tr>
+<tr>
+<td>Signed</td>
+<td>1–2</td>
+</tr>
+<tr>
+<td>In Hell Week</td>
+<td>1–2 at any time</td>
+</tr>
+</tbody>
+</table>
+<p>If signed ≥ 2/week consistently → switch to <strong>cohort onboarding</strong> (start them together, shared Hell Week, class group chat). Peer accountability replaces half your check-in texts.</p>
+<hr />
+<h2>Rules that keep the rhythm honest</h2>
+<ul>
+<li><strong>Outreach before admin.</strong> The DM hour is first because it's the easiest thing to skip and the most expensive to skip.</li>
+<li><strong>Tracker updates happen in the moment</strong>, between calls. A stale tracker lies, and you'll trust it next week.</li>
+<li><strong>Protect the call block.</strong> No errands, no editing videos inside it. Calls book against a calendar that actually exists.</li>
+<li><strong>One coaching point per agent per day.</strong> Same rule as Hell Week — applies to you coaching everyone.</li>
+<li><strong>Sunday review is sacred.</strong> It's the only place the system improves instead of just runs.</li>
+</ul></section><section id="templates" class="doc"><h1>💬 Message Templates</h1><h1>Family Shield Financial — Message Templates</h1>
+<p>Every recurring touchpoint, ready to paste. Personalize the [brackets], keep the rest. Rules that apply to ALL of these: <strong>no income claims ever</strong>, one question per message, sound like a person not a campaign.</p>
+<hr />
+<h2>1. Booking &amp; confirmation</h2>
+<p><strong>Call booked — instant confirmation (text):</strong></p>
+<blockquote>
+<p>Locked in — [day] at [time]. It's a quick 10-min call, I'll call you at this number. Save my number so you know it's me: [your name] from Family Shield. 🛡️</p>
+</blockquote>
+<p><strong>24-hour reminder:</strong></p>
+<blockquote>
+<p>Hey [name], looking forward to tomorrow at [time]. Quick heads up on how I run it: 10 minutes, I explain what we do, you tell me what you're looking for, and we both decide if a longer conversation makes sense. Talk then.</p>
+</blockquote>
+<p><strong>1-hour reminder:</strong></p>
+<blockquote>
+<p>[Name] — calling you in about an hour ([time]). If something came up, reply with a better time and we'll move it. Otherwise talk soon.</p>
+</blockquote>
+<hr />
+<h2>2. No-show recovery (3-touch, then nurture)</h2>
+<p><strong>Touch 1 — same day, no guilt:</strong></p>
+<blockquote>
+<p>Hey [name], we missed each other at [time] — no stress, life happens. I've got [two slot options] open. Which works?</p>
+</blockquote>
+<p><strong>Touch 2 — day 2, add a reason:</strong></p>
+<blockquote>
+<p>[Name], still want to get you that overview — mostly because of what you said about [their why/problem from the DMs]. 10 minutes. [Slot A] or [Slot B]?</p>
+</blockquote>
+<p><strong>Touch 3 — day 5, takeaway close:</strong></p>
+<blockquote>
+<p>Last nudge from me, [name] — I keep these spots for people serious about changing something, and I think that's you, but you'd know better than me. If the timing's wrong, all good — say the word and I'll check back in a couple months. If it's right: [booking link].</p>
+</blockquote>
+<p><strong>Long-term nurture — monthly:</strong></p>
+<blockquote>
+<p>Hey [name], [your name] from Family Shield. No pitch — just checking in. How's [the thing they mentioned] going? <em>(Then actually have the conversation. Re-offer the call only if they open the door.)</em></p>
+</blockquote>
+<hr />
+<h2>3. The 3-call thread</h2>
+<p><strong>After Call 1 → confirm Call 2:</strong></p>
+<blockquote>
+<p>Great talking, [name]. Next call is the real one — we go deep on your situation and whether this actually fixes it, and you can grill me on anything. [Day/time] confirmed. One thing to think about before then: what would need to be true a year from now for you to say this was the best decision you made?</p>
+</blockquote>
+<p><strong>After Call 2 → confirm Call 3:</strong></p>
+<blockquote>
+<p>[Name] — good conversation today. Like I said, next call I lay out the full offer and exactly what's expected on both sides. Come ready to make a decision either way. [Day/time].</p>
+</blockquote>
+<p><strong>After Call 3 — signed (welcome):</strong></p>
+<blockquote>
+<p>Welcome to Family Shield, [name]. 🛡️ Day one starts now. Three things before tonight: (1) sign the agreement in your inbox, (2) click the course link and create your account, (3) send me your exam confirmation once it's booked. Your only job for the next two weeks: pass that exam. I've got the rest.</p>
+</blockquote>
+<hr />
+<h2>4. Activation — study window (Days 1–10)</h2>
+<p><strong>Daily check-in (rotate these so it never feels like a bot):</strong></p>
+<blockquote>
+<p>Day [X]. Course hours done today? What chapter are you in?</p>
+<p>Quick one — practice exam score today? Send me the number, good or bad.</p>
+<p>What's the one concept that's confusing you right now? Let's kill it before it costs you exam points.</p>
+<p>[Name], you booked the exam for [date] because of [their why]. Today's hours are how you get there. Status?</p>
+</blockquote>
+<p><strong>Missed a day (call them, but if no answer, text):</strong></p>
+<blockquote>
+<p>Tried calling. You went quiet on me, [name] — that's usually the moment that decides how this whole thing goes. Call me back tonight. Not mad, just not letting you drift.</p>
+</blockquote>
+<p><strong>Practice score below 80%:</strong></p>
+<blockquote>
+<p>Good — now we know exactly what to fix. Retake the missed sections tonight, send me the new score tomorrow. You don't need to be perfect, you need 80%+ twice in a row before [exam date].</p>
+</blockquote>
+<hr />
+<h2>5. Exam day</h2>
+<p><strong>Morning of:</strong></p>
+<blockquote>
+<p>Exam day, [name]. You've put in the hours — this is just proving it on paper. Slow down on the questions, flag the weird ones, come back to them. Text me the second you walk out. 🛡️</p>
+</blockquote>
+<p><strong>They passed:</strong></p>
+<blockquote>
+<p>THERE IT IS. 🎉 Licensed [state] agent. Told you. Now it gets fun — contracting finishes up over the next couple days, and Hell Week starts [date]. Rest this weekend. Then we go.</p>
+</blockquote>
+<p><strong>They failed:</strong></p>
+<blockquote>
+<p>Okay. First: most people who pass on attempt two say the first try taught them the test. We rebook TODAY while it's fresh — what's the next available date? Then send me your section scores and we rebuild the plan around the weak ones. This changes the timeline by a week, not the outcome.</p>
+</blockquote>
+<hr />
+<h2>6. Hell Week</h2>
+<p><strong>Night before:</strong></p>
+<blockquote>
+<p>Hell Week starts tomorrow, [name]. 7 days, long days, and on the other side you're an agent with a sale on the books — not someone "trying insurance." Huddle's at [time]. Eat a real breakfast. 🛡️</p>
+</blockquote>
+<p><strong>Daily morning text (rotate):</strong></p>
+<blockquote>
+<p>Day [X]. Yesterday: [their numbers]. Today we beat one of those numbers — pick which.</p>
+<p>Morning. One thing today: [the single coaching point from last night's debrief]. Everything else stays the same.</p>
+</blockquote>
+<p><strong>After first sale:</strong></p>
+<blockquote>
+<p>FIRST SALE. 🛡️🎉 Remember what you told me on our second call — about [their why]? That just started getting fixed, by you. Screenshot this moment. Debrief tonight, and tomorrow we do it again.</p>
+</blockquote>
+<p><strong>End of Hell Week (graduation + referral ask):</strong></p>
+<blockquote>
+<p>You finished what most people never start, [name]. Proud of you. Two things at the debrief tonight: your 30-day plan, and one question — who are 2 or 3 people in your world who'd want what you just did? You're proof it works now.</p>
+</blockquote>
+<hr />
+<h2>7. "Not now" / declined — leave the door open</h2>
+<p><strong>They declined respectfully:</strong></p>
+<blockquote>
+<p>All good, [name] — appreciate the straight answer, rare these days. The door doesn't lock behind you. If [their problem] is still sitting there in a few months, you know where I am.</p>
+</blockquote>
+<p><strong>You declined them (not a fit):</strong></p>
+<blockquote>
+<p>[Name], I'm going to be straight because you deserve straight: I don't think this is the right fit right now, and I'd rather tell you that than waste your time or money. If [the blocker] changes, reach back out — that's not a brush-off, I mean it.</p>
+</blockquote>
+<hr />
+<h2>Usage rules</h2>
+<ol>
+<li><strong>Never</strong> paste an income number, a "you could make…", or a screenshot of earnings into any of these. (FTC — see <a href="#system">RECRUITING_SYSTEM.md</a> §7.)</li>
+<li>Personalize the [their why] brackets from the tracker's Why/Problem column — that column exists so these messages write themselves.</li>
+<li>Texts to recruits are fine once they've engaged with you; cold texting scraped numbers is a TCPA problem — keep cold outreach in DMs.</li>
+<li>If a template gets a reply rate you love or hate, edit it here. This file is the living version.</li>
+</ol></section><section id="content" class="doc"><h1>🎬 Content Batch</h1><h1>Family Shield Financial — Recruiting Content Batch (AGENT + MENTOR)</h1>
+<p>Production-ready scripts that feed the <strong>top of the recruiting funnel</strong>. Each one turns an AGENT or MENTOR prompt from <span class="xref">CONTENT_PLAN</span> into a shootable short, then routes viewers into the <a href="#scripts">3-call close</a> via a <code>COMMENT</code> keyword → DM → Call 1.</p>
+<p><strong>Style rules (from the style bible):</strong> frame-one hook (the hook IS the first frame, no intro), no music, Montserrat glass captions, on-screen text strips all punctuation except <code>?</code>, 3-beat motion (hook → HUD module → CTA). Vertical, ~20–40s.</p>
+<p><strong>The funnel link:</strong> every CTA keyword triggers the same path — they comment/DM the keyword → you reply with the <a href="#templates">booking message</a> → Call 1. Default keyword: <strong>SHIELD</strong> (a couple use <strong>DAY1</strong>).</p>
+<blockquote>
+<p><strong>COMPLIANCE — applies to every script below:</strong> no income figures, no "make $X," no guarantees. These are AGENT/MENTOR pillars on purpose — they sell the <em>opportunity and the standard</em>, never a number. (See <a href="#system">RECRUITING_SYSTEM.md</a> §7.) On camera: you or a teammate.</p>
+</blockquote>
+<hr />
+<h2>AGENT-01 — "Two doors at 20" <em>(the fork)</em></h2>
+<p><strong>HOOK (frame one):</strong> "Two doors, same age. Pick wrong and you feel it for ten years."
+<strong>SCRIPT:</strong> "Door one — a job with a cap. You work harder, you make the same, someone else decides your raise. Door two — you own it. You get licensed, you learn a real skill, and what you earn is on you. Scary? A little. But one of these doors has a ceiling and one doesn't. I picked the one without a ceiling. The only question is which one you're standing in front of right now."
+<strong>ON-SCREEN beats:</strong> <code>TWO DOORS</code> → <code>ONE HAS A CEILING</code> → <code>ONE DOESNT</code> → <code>WHICH ARE YOU IN?</code>
+<strong>HUD:</strong> doors graphic, gold highlight on door two.
+<strong>CTA:</strong> "If door two is calling you — comment SHIELD and I'll show you how it actually works."
+<strong>CAPTION:</strong> Two doors at the same age. One has a ceiling. One doesn't. Comment SHIELD to see door two 🛡️
+<strong>HASHTAGS:</strong> #careerchange #sales #lifeinsurance #opportunity #fyp</p>
+<hr />
+<h2>AGENT-02 — "Why I left ___ for this"</h2>
+<p><strong>HOOK:</strong> "I left a steady paycheck for commission. Everyone thought I was crazy."
+<strong>SCRIPT:</strong> "Here's what they didn't get. The steady paycheck was also a steady ceiling. Same number every two weeks no matter how good I was. I didn't want safe-and-stuck. I wanted my effort to actually matter. So I got licensed, I plugged into a system, and for the first time my work and my income were on the same team. I'm not telling you to quit tomorrow. I'm telling you the safe option isn't as safe as it feels."
+<strong>ON-SCREEN:</strong> <code>THEY SAID I WAS CRAZY</code> → <code>STEADY PAYCHECK = STEADY CEILING</code> → <code>EFFORT SHOULD MATTER</code>
+<strong>CTA:</strong> "Curious what the switch looks like? Comment SHIELD."
+<strong>CAPTION:</strong> Everyone said leaving a steady check was crazy. Here's what they missed. Comment SHIELD 🛡️
+<strong>HASHTAGS:</strong> #9to5 #careerpivot #insuranceagent #entrepreneur #fyp</p>
+<hr />
+<h2>AGENT-03 — "No degree, no experience"</h2>
+<p><strong>HOOK:</strong> "No degree. No sales experience. Licensed and working in about two weeks."
+<strong>SCRIPT:</strong> "People think you need a four-year degree and a sales personality to do this. You don't. You need a license — which is a couple weeks of studying and a state exam — and a system that hands you leads and a script. The experience? You build it on the phones with someone in your ear. I'm not saying it's easy. I'm saying the barrier you think is there isn't there."
+<strong>ON-SCREEN:</strong> <code>NO DEGREE</code> → <code>NO EXPERIENCE</code> → <code>LICENSED IN ~2 WEEKS</code> → <code>WHATS YOUR EXCUSE?</code>
+<strong>HUD:</strong> Day 0 → Day 14 mini-timeline.
+<strong>CTA:</strong> "Want the 2-week path? Comment DAY1."
+<strong>CAPTION:</strong> No degree, no experience, licensed in about two weeks. The barrier isn't real. Comment DAY1 🛡️
+<strong>HASHTAGS:</strong> #nodegree #careerchange #lifeinsurance #newcareer #fyp</p>
+<hr />
+<h2>AGENT-04 — "Day 1 vs Day 90"</h2>
+<p><strong>HOOK:</strong> "Day 1 you're terrified. Day 90 you're training the new person. Watch."
+<strong>SCRIPT:</strong> "Day one, you don't know what you don't know. First week — we call it Hell Week — long days, on the phones, someone closing with you. By day thirty you've made sales on your own. By day ninety you're the one people ask how you did it. Nothing about you changed except the reps. That's the whole secret. Reps, fast, with support."
+<strong>ON-SCREEN:</strong> <code>DAY 1 TERRIFIED</code> → <code>DAY 7 HELL WEEK</code> → <code>DAY 30 ON YOUR OWN</code> → <code>DAY 90 LEADING</code>
+<strong>HUD:</strong> timeline bar, gold fill animating left to right.
+<strong>CTA:</strong> "Comment DAY1 and I'll walk you through the first 90."
+<strong>CAPTION:</strong> Day 1 vs Day 90. The only thing that changed was the reps. Comment DAY1 🛡️
+<strong>HASHTAGS:</strong> #transformation #salestraining #insuranceagent #grind #fyp</p>
+<hr />
+<h2>AGENT-05 — "Who actually succeeds here"</h2>
+<p><strong>HOOK:</strong> "I'll be honest about who fails at this. Most people won't like it."
+<strong>SCRIPT:</strong> "It's not the smartest people who win here. It's not the most experienced. It's the coachable ones who show up every day and do the activity when nobody's watching. The ones who fail? They want it easy, they argue with the system, they ghost when it gets hard. So before you ask if you'd be good at this, ask if you'd actually do the work. If the answer's yes, the rest is teachable."
+<strong>ON-SCREEN:</strong> <code>WHO FAILS HERE</code> → <code>NOT THE UNSKILLED</code> → <code>THE UNCOACHABLE</code> → <code>COULD YOU DO THE WORK?</code>
+<strong>CTA:</strong> "If you're coachable and hungry — comment SHIELD."
+<strong>CAPTION:</strong> The honest truth about who wins and who washes out. Comment SHIELD 🛡️
+<strong>HASHTAGS:</strong> #mindset #workethic #sales #realtalk #fyp</p>
+<hr />
+<h2>AGENT-06 — "You don't have to be a 'salesperson'"</h2>
+<p><strong>HOOK:</strong> "I'm not a salesperson. That's exactly why families trust me."
+<strong>SCRIPT:</strong> "Forget the slick used-car energy. This job is sitting with a family who asked for help and figuring out how to protect them if the worst happens. That's not selling — that's caring out loud. The people who do best here aren't the loud ones. They're the ones who listen, ask the real question, and actually mean it. If that's you, you've already got the hard part."
+<strong>ON-SCREEN:</strong> <code>NOT A SALESPERSON</code> → <code>JUST SOMEONE WHO LISTENS</code> → <code>THATS THE WHOLE JOB</code>
+<strong>CTA:</strong> "If 'caring out loud' sounds like you — comment SHIELD."
+<strong>CAPTION:</strong> You don't need to be a 'salesperson.' You need to care out loud. Comment SHIELD 🛡️
+<strong>HASHTAGS:</strong> #helpingfamilies #lifeinsurance #purpose #careerchange #fyp</p>
+<hr />
+<h2>MENTOR-01 — "The #1 objection (it's not price)"</h2>
+<p><strong>HOOK:</strong> "The number one reason people say no? It's never the price."
+<strong>SCRIPT:</strong> "Everybody thinks it's money. It's not. It's trust and timing. 'Let me think about it' almost always means one specific thing didn't get answered. So instead of pushing harder, you get curious — 'totally fair, is it the cost, the timing, or are you just not sure it works?' Name the real objection and you can actually solve it. Push past a fake one and you lose them. That one shift changes everything."
+<strong>ON-SCREEN:</strong> <code>THE #1 OBJECTION</code> → <code>ITS NOT PRICE</code> → <code>ITS TRUST + TIMING</code> → <code>GET CURIOUS NOT PUSHY</code>
+<strong>HUD:</strong> "Objection → real reason" flip module.
+<strong>CTA:</strong> "Want the full objection framework? Comment SHIELD."
+<strong>CAPTION:</strong> The #1 objection isn't price. Here's what it actually is. Comment SHIELD 🛡️
+<strong>HASHTAGS:</strong> #salestips #objectionhandling #salestraining #closing #fyp</p>
+<hr />
+<h2>MENTOR-02 — "The mindset shift that changed everything"</h2>
+<p><strong>HOOK:</strong> "One sentence changed how I work: I'm not asking for a sale, I'm offering a solution."
+<strong>SCRIPT:</strong> "When I begged for the sale, I was nervous and they felt it. The day I flipped it — I'm here to solve a real problem for this family, take it or leave it — the pressure left the room. Confidence isn't volume. It's believing what you're offering is genuinely good. Lead with the problem you solve, not the thing you need, and watch what happens."
+<strong>ON-SCREEN:</strong> <code>STOP ASKING FOR THE SALE</code> → <code>START OFFERING A SOLUTION</code> → <code>CONFIDENCE ISNT VOLUME</code>
+<strong>CTA:</strong> "If you want to learn to lead with value — comment SHIELD."
+<strong>CAPTION:</strong> The one mindset shift that took the pressure out of every call. Comment SHIELD 🛡️
+<strong>HASHTAGS:</strong> #mindset #salesmindset #confidence #growth #fyp</p>
+<hr />
+<h2>MENTOR-03 — "What I wish I knew on day one"</h2>
+<p><strong>HOOK:</strong> "If I could go back to day one, I'd tell myself three things."
+<strong>SCRIPT:</strong> "One — your first week should be uncomfortable. If it's comfortable you're not doing enough reps. Two — you'll fail in front of people and survive it. Every single time. Three — the agents who make it aren't gifted, they just didn't quit in the dip around week two. That's it. Show up through the dip and you're already ahead of most."
+<strong>ON-SCREEN:</strong> <code>DAY ONE ADVICE</code> → <code>BE UNCOMFORTABLE</code> → <code>FAIL IN PUBLIC, SURVIVE</code> → <code>DONT QUIT THE DIP</code>
+<strong>CTA:</strong> "Comment DAY1 and I'll send you the real day-one rundown."
+<strong>CAPTION:</strong> Three things I wish someone told me on day one. Comment DAY1 🛡️
+<strong>HASHTAGS:</strong> #advice #newcareer #salestraining #perseverance #fyp</p>
+<hr />
+<h2>MENTOR-04 — "3 habits of every top earner on our team"</h2>
+<p><strong>HOOK:</strong> "Every top performer I know does these three boring things."
+<strong>SCRIPT:</strong> "One — they hit their dials before they 'feel ready,' because motivation follows action, not the other way around. Two — they review one call a day and fix one thing, not ten. Three — they protect their book, they write business people actually keep, so they're not starting from zero every month. Nothing flashy. Just three boring habits done daily while everyone else looks for a hack."
+<strong>ON-SCREEN:</strong> <code>3 HABITS OF TOP EARNERS</code> → <code>DIAL BEFORE READY</code> → <code>FIX ONE THING A DAY</code> → <code>PROTECT THE BOOK</code>
+<strong>HUD:</strong> 3-point checklist module.
+<strong>CTA:</strong> "Want to build these habits with a team that has your back? Comment SHIELD."
+<strong>CAPTION:</strong> Three boring habits behind every top earner. No hacks. Comment SHIELD 🛡️
+<strong>HASHTAGS:</strong> #habits #topproducer #discipline #salestips #fyp</p>
+<hr />
+<h2>How to run this batch</h2>
+<ul>
+<li><strong>Record fast:</strong> all 10 are answerable in one ~25-min talking session — same engine as your podcast sourcing. Shoot them back-to-back as selfie talking-heads, then the pipeline cuts + adds HUD/captions.</li>
+<li><strong>Post mix:</strong> these slot into the weekly AGENT×3 / MENTOR×1 cadence — roughly 3 weeks of recruiting-pillar content from one sitting.</li>
+<li><strong>Keyword → funnel:</strong> when SHIELD/DAY1 comes in, reply with the booking message from <a href="#templates">MESSAGE_TEMPLATES.md</a> §1 and the recruit enters the <a href="Family_Shield_Agent_Pipeline.xlsx" class="dl">pipeline tracker</a> at Funnel-Outreach.</li>
+<li><strong>Brand:</strong> confirmed <strong>Family Shield Financial</strong> across content + recruiting (2026-06-12). The video engine and IG still carry the old "Good Guys Financial" label in a few on-screen/profile spots — rebrand scope is being handled separately; these scripts already assume Family Shield.</li>
+</ul></section><section id="video" class="doc"><h1>▶️ Pre-Call Video</h1><h1>Pre-Call Video — "What Family Shield Is (Watch Before Our Call)"</h1>
+<p><strong>Purpose:</strong> sent the moment someone books Call 1. Pre-frames the opportunity, filters tire-kickers, and cuts Call 1 in half — they show up already knowing what it is, so the call is about <em>them</em>.
+<strong>Length:</strong> 3–4 minutes. <strong>Format:</strong> talking head, direct to camera, plain background or office. <strong>Tone:</strong> calm confidence, zero hype. This video <em>filters</em>, it doesn't sell.
+<strong>Hard rule:</strong> no income numbers, no earnings screenshots, no "six figures." Anywhere. (FTC — and it's also just stronger positioning.)</p>
+<p><strong>Send with:</strong> <em>"Before our call, watch this — 3 minutes. It'll make our 10 minutes way more useful. If it's a clear no after watching, just tell me and I'll free up your slot, no hard feelings."</em> ← that line alone filters for you.</p>
+<hr />
+<h2>SCRIPT</h2>
+<p><strong>[HOOK — first 5 seconds, frame one]</strong></p>
+<blockquote>
+<p>You booked a call with me, so before we talk, let me save us both some time and tell you exactly what this is — and exactly who it's not for.</p>
+</blockquote>
+<p><strong>[WHO WE ARE — 30 sec]</strong></p>
+<blockquote>
+<p>I'm [name], with Family Shield Financial. We do one thing: we help families protect their income with life insurance. Families request coverage, an agent sits down with them — usually over the phone — and helps them get protected. That's the business. No inventing a product, no chasing strangers at the mall. Families who asked for help, and a licensed agent who shows up.</p>
+</blockquote>
+<p><strong>[WHAT THE OPPORTUNITY IS — 60 sec]</strong></p>
+<blockquote>
+<p>Here's what working with us actually looks like.</p>
+<p>You don't need experience, but you do need a license — and we get you there fast. You sign with us, we schedule your state exam on day one, and most people are licensed in about two weeks. We handle the contracting with the insurance carriers while you study, so the day you pass, you're nearly ready to work.</p>
+<p>Then comes the part I'm most proud of, and the part that scares the right people in a good way: your first week as an agent, we call Hell Week. Ten to twelve hour days, for one week, with us on the phone beside you. You're not watching training videos — you're talking to real families, and a mentor is on the line for every close. The goal of Hell Week is simple: you don't finish it as someone <em>trying</em> insurance. You finish it as an agent with your first sale on the books.</p>
+<p>After that, you've got a system: leads, scripts, a dialer, daily support, and people a phone call away who've already done what you're trying to do.</p>
+</blockquote>
+<p><strong>[WHO IT'S NOT FOR — 45 sec. This is the filter — deliver it slowly.]</strong></p>
+<blockquote>
+<p>Now — who this is <em>not</em> for. I'd rather lose you here than in week two.</p>
+<p>This is commission. It's a business you own, not a job you clock into. There's no salary and nobody's going to babysit you. Getting licensed costs a few hundred dollars — your money, invested in your own license that you keep forever.</p>
+<p>If you need someone standing over you to work… if "I'll try it and see" is your plan… or if a week of long days sounds unreasonable to you — no judgment, but don't take the call. Seriously.</p>
+<p>If reading that lit something up in you instead — good. Keep watching.</p>
+</blockquote>
+<p><strong>[WHAT THE CALL IS — 30 sec]</strong></p>
+<blockquote>
+<p>So here's what happens on our call. Ten minutes. I'm not going to pitch you — I'm going to ask you what's going on in your world and what you're actually trying to fix. You ask me anything you want. If it makes sense, we book a longer conversation and go deep. If it doesn't, we shake hands and part friends.</p>
+<p>I don't offer anyone a spot on a first call. You'd have to earn that, and honestly — so would we.</p>
+</blockquote>
+<p><strong>[CLOSE — 15 sec]</strong></p>
+<blockquote>
+<p>That's it. That's what this is. Come with your real situation and your real questions, and I'll bring you straight answers. See you on the call.</p>
+</blockquote>
+<hr />
+<h2>Production notes</h2>
+<ul>
+<li>Frame-one hook rule applies (same as your shorts) — the first line lands inside 5 seconds, no intro card.</li>
+<li>Captions on (Montserrat, your standard caption style) — most people watch muted.</li>
+<li>One cut max per section; this should feel like a person, not a produced ad.</li>
+<li>End card: just the Family Shield mark + "See you on the call." No links, no CTA buttons — the call is already booked.</li>
+<li>Re-record per platform later if needed; v1 just needs to exist. Done &gt; perfect.</li>
+</ul></section>
+
+ <section id="glossary" class="doc"><h1>&#x1F4D6; Glossary</h1>
+  <p>Plain-English definitions of the terms a brand-new agent needs to know.</p><div class="gterm"><div class="gt">Chargeback</div><div class="gd">Carriers often pay part of a policy's first-year commission up front (an <b>advance</b>). If the client cancels before that's 'earned out,' the unearned part is taken back — that's a chargeback. Writing affordable business clients keep is the best defense.</div></div><div class="gterm"><div class="gt">Rollup</div><div class="gd">If a downline agent leaves owing a chargeback the carrier can't collect, that debt can 'roll up' to the agent who contracted them. It's the main reason we recruit to a high standard.</div></div><div class="gterm"><div class="gt">Persistency</div><div class="gd">The share of your policies that stay active and paid over time. High persistency = fewer chargebacks and a healthier book.</div></div><div class="gterm"><div class="gt">Advance vs as-earned</div><div class="gd"><b>Advance</b> = paid a chunk of commission up front (faster money, chargeback risk). <b>As-earned</b> = paid as the client pays their premiums (slower, lower risk). New agents can choose lower-risk as-earned while learning.</div></div><div class="gterm"><div class="gt">SureLC</div><div class="gd">The online system most carriers use to contract (appoint) agents. Runs in parallel with studying so you can write business the day you pass.</div></div><div class="gterm"><div class="gt">Writing number</div><div class="gd">The ID a carrier issues once you're contracted — it's how your business and commissions get tracked to you.</div></div><div class="gterm"><div class="gt">NIPR</div><div class="gd">National Insurance Producer Registry — where licenses are applied for and tracked across states.</div></div><div class="gterm"><div class="gt">PLE</div><div class="gd">Pre-Licensing Education — the course hours some states require before you can sit the exam. Ranges from 0 to 60+ hours by state (see State Lookup).</div></div><div class="gterm"><div class="gt">IMO</div><div class="gd">Independent Marketing Organization — the distribution structure agencies plug into to access carriers and comp. Family Shield operates in this model.</div></div><div class="gterm"><div class="gt">1099</div><div class="gd">You're an independent contractor, not an employee — you own your business, set your hours, and earn commission (no salary).</div></div><div class="gterm"><div class="gt">Hell Week</div><div class="gd">Your launch week: one focused week of long days on the phones with a mentor on your closes, aimed at landing your first sale fast.</div></div><div class="gterm"><div class="gt">DNC / TCPA</div><div class="gd">Do-Not-Call and the Telephone Consumer Protection Act — the rules governing who you can call/text and how. We scrub and respect them.</div></div></section>
+
+ <section id="states" class="tool"><h1>&#x1F5FA;&#xFE0F; State Lookup</h1>
+  <p>Day 0 for any signer — type their state for pre-licensing hours, fingerprints, and exam vendor. <code>VERIFY</code> = confirm once at the state DOI / NIPR.</p>
+  <div class="lookup"><input id="stq" placeholder="Type a state… e.g. Texas" autocomplete="off"></div>
+  <div class="result" id="stres"></div>
+  <div class="scroll"><table class="data" id="sttab"><thead><tr><th>State</th><th>PLE Hours</th><th>Fingerprints</th><th>Exam Vendor</th><th>Notes</th></tr></thead><tbody></tbody></table></div>
+ </section>
+
+ <section id="downloads" class="tool"><h1>&#x1F4C1; Files</h1>
+  <div class="dlrow">
+   <a href="Family_Shield_Playbook.pdf" class="dl"><b>📄 Playbook PDF</b><span>Polished reference to print/share</span></a>
+   <a href="Family_Shield_Agent_Pipeline.xlsx" class="dl"><b>📊 Agent Pipeline (xlsx)</b><span>Spreadsheet hub for Google Sheets</span></a>
+   <a href="Family_Shield_Agent_Pipeline_DEMO.xlsx" class="dl"><b>📊 Pipeline (demo data)</b><span>Pre-filled sample</span></a>
+  </div></section>
+</main></div>
+<script>
+const STATES=[{"state": "Alabama", "hrs": "0", "fp": "VERIFY", "vendor": "State-run (Univ of Alabama)", "notes": "PLE eliminated Jan 2024"}, {"state": "Alaska", "hrs": "0", "fp": "VERIFY", "vendor": "Pearson VUE", "notes": "No PLE required"}, {"state": "Arizona", "hrs": "0", "fp": "Y", "vendor": "Prometric", "notes": "No PLE required"}, {"state": "Arkansas", "hrs": "0", "fp": "VERIFY", "vendor": "Pearson VUE", "notes": "No PLE required"}, {"state": "California", "hrs": "12", "fp": "Y", "vendor": "PSI", "notes": "12 hrs Code & Ethics only as of Jan 2026 (AB 943); PLE eliminated"}, {"state": "Colorado", "hrs": "50", "fp": "VERIFY", "vendor": "Pearson VUE", "notes": "50 hrs life"}, {"state": "Connecticut", "hrs": "20", "fp": "VERIFY", "vendor": "Prometric", "notes": "20 hrs life"}, {"state": "Delaware", "hrs": "0", "fp": "VERIFY", "vendor": "Pearson VUE", "notes": "No PLE required"}, {"state": "District of Columbia", "hrs": "0 (VERIFY)", "fp": "VERIFY", "vendor": "Pearson VUE", "notes": "Varies - confirm at DOI"}, {"state": "Florida", "hrs": "40", "fp": "Y", "vendor": "Pearson VUE", "notes": "2-14 life-only = 40 hrs; 2-15 Life+Health = 60 hrs"}, {"state": "Georgia", "hrs": "8 (VERIFY)", "fp": "Y", "vendor": "Pearson VUE", "notes": "Small requirement per 2026 guide - confirm"}, {"state": "Hawaii", "hrs": "0", "fp": "VERIFY", "vendor": "PSI", "notes": "No PLE required"}, {"state": "Idaho", "hrs": "0", "fp": "VERIFY", "vendor": "Pearson VUE", "notes": "No PLE required"}, {"state": "Illinois", "hrs": "20", "fp": "VERIFY", "vendor": "Pearson VUE", "notes": "20 hrs per line (40 for Life+Health)"}, {"state": "Indiana", "hrs": "20", "fp": "VERIFY", "vendor": "Prometric", "notes": "20 hrs life"}, {"state": "Iowa", "hrs": "0", "fp": "VERIFY", "vendor": "Pearson VUE", "notes": "No PLE required"}, {"state": "Kansas", "hrs": "0", "fp": "VERIFY", "vendor": "Pearson VUE", "notes": "No PLE required"}, {"state": "Kentucky", "hrs": "20", "fp": "VERIFY", "vendor": "State-run (KY DOI)", "notes": "Does not use big-3 vendors - exam via DOI"}, {"state": "Louisiana", "hrs": "0", "fp": "VERIFY", "vendor": "Pearson VUE", "notes": "PLE eliminated"}, {"state": "Maine", "hrs": "0 (VERIFY)", "fp": "VERIFY", "vendor": "Pearson VUE", "notes": "Likely no PLE - confirm"}, {"state": "Maryland", "hrs": "0", "fp": "VERIFY", "vendor": "PSI", "notes": "PLE eliminated"}, {"state": "Massachusetts", "hrs": "0", "fp": "VERIFY", "vendor": "Pearson VUE", "notes": "Pearson VUE official provider from Jul 22 2026 (was Prometric); no PLE"}, {"state": "Michigan", "hrs": "20", "fp": "VERIFY", "vendor": "PSI", "notes": "20 hrs life"}, {"state": "Minnesota", "hrs": "0 (VERIFY)", "fp": "VERIFY", "vendor": "Pearson VUE", "notes": "Likely no PLE - confirm"}, {"state": "Mississippi", "hrs": "0 (VERIFY)", "fp": "VERIFY", "vendor": "Pearson VUE", "notes": "Confirm at DOI"}, {"state": "Missouri", "hrs": "0", "fp": "VERIFY", "vendor": "Pearson VUE", "notes": "No PLE required"}, {"state": "Montana", "hrs": "0 (VERIFY)", "fp": "VERIFY", "vendor": "Prometric", "notes": "Confirm at DOI"}, {"state": "Nebraska", "hrs": "0", "fp": "VERIFY", "vendor": "Pearson VUE", "notes": "No PLE required"}, {"state": "Nevada", "hrs": "0 (VERIFY)", "fp": "Y", "vendor": "Pearson VUE", "notes": "Confirm at DOI"}, {"state": "New Hampshire", "hrs": "0 (VERIFY)", "fp": "VERIFY", "vendor": "Prometric", "notes": "Confirm at DOI"}, {"state": "New Jersey", "hrs": "0 (VERIFY)", "fp": "Y", "vendor": "PSI", "notes": "Likely no PLE - confirm"}, {"state": "New Mexico", "hrs": "0 (VERIFY)", "fp": "VERIFY", "vendor": "Prometric", "notes": "Confirm at DOI"}, {"state": "New York", "hrs": "20 (VERIFY)", "fp": "VERIFY", "vendor": "PSI", "notes": "Life-only ~20 hrs; combined lines more - confirm"}, {"state": "North Carolina", "hrs": "0", "fp": "VERIFY", "vendor": "Pearson VUE", "notes": "PLE eliminated Oct 1 2025"}, {"state": "North Dakota", "hrs": "0 (VERIFY)", "fp": "VERIFY", "vendor": "Prometric", "notes": "Confirm at DOI"}, {"state": "Ohio", "hrs": "20 (VERIFY)", "fp": "Y", "vendor": "PSI", "notes": "Sources conflict (20-40) - confirm"}, {"state": "Oklahoma", "hrs": "0", "fp": "VERIFY", "vendor": "Pearson VUE", "notes": "No PLE required"}, {"state": "Oregon", "hrs": "0 (VERIFY)", "fp": "VERIFY", "vendor": "PSI", "notes": "Confirm at DOI"}, {"state": "Pennsylvania", "hrs": "0", "fp": "VERIFY", "vendor": "Pearson VUE", "notes": "PLE eliminated Apr 29 2025"}, {"state": "Rhode Island", "hrs": "0 (VERIFY)", "fp": "VERIFY", "vendor": "Pearson VUE", "notes": "Confirm at DOI"}, {"state": "South Carolina", "hrs": "0 (VERIFY)", "fp": "VERIFY", "vendor": "Pearson VUE", "notes": "Confirm at DOI"}, {"state": "South Dakota", "hrs": "0 (VERIFY)", "fp": "VERIFY", "vendor": "Pearson VUE", "notes": "Confirm at DOI"}, {"state": "Tennessee", "hrs": "0", "fp": "VERIFY", "vendor": "Pearson VUE", "notes": "No PLE required"}, {"state": "Texas", "hrs": "0", "fp": "Y", "vendor": "Pearson VUE", "notes": "No PLE; FBI fingerprints required"}, {"state": "Utah", "hrs": "0", "fp": "VERIFY", "vendor": "Pearson VUE", "notes": "No PLE required"}, {"state": "Vermont", "hrs": "0 (VERIFY)", "fp": "VERIFY", "vendor": "Pearson VUE", "notes": "Confirm at DOI"}, {"state": "Virginia", "hrs": "0", "fp": "VERIFY", "vendor": "Pearson VUE", "notes": "No PLE required"}, {"state": "Washington", "hrs": "0", "fp": "VERIFY", "vendor": "PSI", "notes": "PLE eliminated"}, {"state": "West Virginia", "hrs": "0 (VERIFY)", "fp": "VERIFY", "vendor": "Pearson VUE", "notes": "Confirm at DOI"}, {"state": "Wisconsin", "hrs": "0 (VERIFY)", "fp": "VERIFY", "vendor": "PSI", "notes": "Confirm at DOI"}, {"state": "Wyoming", "hrs": "0 (VERIFY)", "fp": "VERIFY", "vendor": "Pearson VUE", "notes": "Confirm at DOI"}], SAMPLE=[{"name": "Maria Lopez", "source": "IG DM", "state": "TX", "stage": "Funnel-Outreach", "notes": "Replied to AGENT reel, qualifying", "tasks": {"scheduled": false, "course": false, "passed": false, "contracted": false, "hellweek": false, "firstsale": false}}, {"name": "Tyrone Banks", "source": "IG DM", "state": "GA", "stage": "Funnel-Outreach", "notes": "Sent opener, no reply yet", "tasks": {"scheduled": false, "course": false, "passed": false, "contracted": false, "hellweek": false, "firstsale": false}}, {"name": "Priya Nair", "source": "FB", "state": "NC", "stage": "Funnel-Outreach", "notes": "Warm, asking questions", "tasks": {"scheduled": false, "course": false, "passed": false, "contracted": false, "hellweek": false, "firstsale": false}}, {"name": "Chris Dunn", "source": "Referral \u2013 Jane", "state": "OH", "stage": "Funnel-Call1", "notes": "Booking Call 2", "tasks": {"scheduled": false, "course": false, "passed": false, "contracted": false, "hellweek": false, "firstsale": false}}, {"name": "Alyssa Reed", "source": "IG DM", "state": "AZ", "stage": "Funnel-Call1", "notes": "No-showed first C1, rebooked", "tasks": {"scheduled": false, "course": false, "passed": false, "contracted": false, "hellweek": false, "firstsale": false}}, {"name": "Marcus Hill", "source": "TikTok", "state": "FL", "stage": "Funnel-Call2", "notes": "Hates his commission cap, wants ownership", "tasks": {"scheduled": false, "course": false, "passed": false, "contracted": false, "hellweek": false, "firstsale": false}}, {"name": "Dana White", "source": "Referral \u2013 Marcus", "state": "FL", "stage": "Funnel-Call3", "notes": "Wants flexibility for her kids", "tasks": {"scheduled": false, "course": false, "passed": false, "contracted": false, "hellweek": false, "firstsale": false}}, {"name": "Sam Carter", "source": "IG DM", "state": "TX", "stage": "Activation-Study", "notes": "Laid off, needs a new path", "tasks": {"scheduled": true, "course": true, "passed": false, "contracted": false, "hellweek": false, "firstsale": false}}, {"name": "Bianca Gomez", "source": "Podcast", "state": "CA", "stage": "Activation-Study", "notes": "Wants to build something of her own", "tasks": {"scheduled": true, "course": true, "passed": false, "contracted": false, "hellweek": false, "firstsale": false}}, {"name": "Robert Pace", "source": "Referral \u2013 Sam", "state": "TX", "stage": "Activation-Contract", "notes": "Tired of a dead-end job", "tasks": {"scheduled": true, "course": true, "passed": true, "contracted": false, "hellweek": false, "firstsale": false}}, {"name": "Jasmine Lee", "source": "IG DM", "state": "FL", "stage": "Hell Week", "notes": "Single mom, wants control of income", "tasks": {"scheduled": true, "course": true, "passed": true, "contracted": true, "hellweek": false, "firstsale": false}}, {"name": "Andre Wilson", "source": "Referral \u2013 Jane", "state": "GA", "stage": "Graduated", "notes": "Wanted out of warehouse work", "tasks": {"scheduled": true, "course": true, "passed": true, "contracted": true, "hellweek": true, "firstsale": true}}, {"name": "Kyle Morris", "source": "TikTok", "state": "OH", "stage": "Lost-Declined", "notes": "Wouldn't commit to Hell Week, not a fit", "tasks": {"scheduled": true, "course": true, "passed": true, "contracted": true, "hellweek": true, "firstsale": false}}];
+const STAGES=["Funnel-Outreach", "Funnel-Call1", "Funnel-Call2", "Funnel-Call3", "Signed", "Activation-Onboard", "Activation-Study", "Activation-Contract", "Hell Week", "Graduated", "Lost-Declined"];
+const TASKS=[["scheduled","Exam scheduled"],["course","Pre-licensing course done"],["passed","Exam passed"],["contracted","Contracted (writing numbers)"],["hellweek","Hell Week complete"],["firstsale","First sale 🏆"]];
+const ORD={};STAGES.forEach((s,i)=>ORD[s]=i);
+const SC={"Signed":"#C6EFCE","Hell Week":"#C9A227","Graduated":"#DDEBF7","Lost-Declined":"#F8CBAD"};
+const KEY="fsf_agents_v1";
+const save=()=>localStorage.setItem(KEY,JSON.stringify(AG));
+const uid=()=>"a"+Math.floor(performance.now()*1000)+Math.floor(Math.random()*1000);
+let _raw=localStorage.getItem(KEY);
+let AG=_raw===null?Array.from({length:10},(_,i)=>({id:"seed"+i,name:"",source:"",state:"",stage:"Funnel-Outreach",notes:"",tasks:{}})):JSON.parse(_raw);
+if(_raw===null)save();
+let open={};
+
+// stage filter options
+const fstage=document.getElementById("fstage");
+STAGES.forEach(s=>{const o=document.createElement("option");o.value=s;o.textContent=s;fstage.appendChild(o);});
+
+function nextAction(a){
+ if(a.stage==="Lost-Declined")return "Closed — lost / declined";
+ if(ORD[a.stage]<4)return "Move through the 3-call close → sign";
+ const t=TASKS.find(t=>!(a.tasks||{})[t[0]]);
+ return t?("Next: "+t[1]):"All onboarding steps complete 🎉";
+}
+function renderDash(){
+ const named=AG.filter(a=>(a.name||"").trim());
+ const active=named.filter(a=>a.stage!=="Lost-Declined");
+ const ge=k=>active.filter(a=>ORD[a.stage]>=ORD[k]).length;
+ const tiles=[["Total",named.length,0],["Signed",ge("Signed"),0],["Licensed",ge("Activation-Contract"),0],
+  ["Hell Week",named.filter(a=>a.stage==="Hell Week").length,0],["Graduated",named.filter(a=>a.stage==="Graduated").length,1],
+  ["Lost",named.filter(a=>a.stage==="Lost-Declined").length,0]];
+ document.getElementById("tiles").innerHTML=tiles.map(t=>`<div class="tile ${t[2]?'g':''}"><div class="v">${t[1]}</div><div class="l">${t[0]}</div></div>`).join("");
+ document.getElementById("dist").innerHTML=STAGES.map(s=>{const n=named.filter(a=>a.stage===s).length;return n?`<div class="kv"><span>${s}</span><b>${n}</b></div>`:"";}).join("")||'<div class="note">No agents yet.</div>';
+ const wins=named.filter(a=>(a.tasks||{}).firstsale||a.stage==="Graduated").map(a=>a.name||"(unnamed)");
+ const hw=named.filter(a=>a.stage==="Hell Week").map(a=>a.name||"(unnamed)");
+ document.getElementById("board").innerHTML=
+  (wins.length?wins.map(n=>`<li>🏆 ${n} — first sale</li>`).join(""):'<li class="note" style="list-style:none;margin-left:-18px">No wins logged yet</li>')
+  +(hw.length?hw.map(n=>`<li>🔥 ${n} — in Hell Week</li>`).join(""):"");
+}
+function renderTable(){
+ const q=(document.getElementById("search").value||"").toLowerCase();
+ const fs=fstage.value;
+ const tb=document.querySelector("#tbl tbody");tb.innerHTML="";
+ AG.forEach((a,i)=>{
+  if(fs&&a.stage!==fs)return;
+  if(q&&!((a.name+a.state+a.source).toLowerCase().includes(q)))return;
+  const tr=document.createElement("tr");
+  const opts=STAGES.map(s=>`<option ${s===a.stage?"selected":""}>${s}</option>`).join("");
+  tr.innerHTML=`<td><button class="exp" data-i="${i}">${open[a.id]?"⌄":"›"}</button></td>
+   <td><input value="${(a.name||'').replace(/"/g,'&quot;')}" data-i="${i}" data-f="name" placeholder="Name"></td>
+   <td><input value="${(a.source||'').replace(/"/g,'&quot;')}" data-i="${i}" data-f="source" placeholder="e.g. IG DM"></td>
+   <td><input value="${(a.state||'').replace(/"/g,'&quot;')}" data-i="${i}" data-f="state" placeholder="ST" style="text-transform:uppercase"></td>
+   <td style="background:${SC[a.stage]||''}"><select class="stagesel" data-i="${i}" data-f="stage">${opts}</select></td>
+   <td><input value="${(a.notes||'').replace(/"/g,'&quot;')}" data-i="${i}" data-f="notes" placeholder="why they're here / notes"></td>
+   <td><button class="del" data-del="${i}">✕</button></td>`;
+  tb.appendChild(tr);
+  if(open[a.id]){
+   const dr=document.createElement("tr");dr.className="detail";
+   const chks=TASKS.map(t=>`<label class="chk"><input type="checkbox" data-task="${i}" data-key="${t[0]}" ${(a.tasks||{})[t[0]]?"checked":""}> ${t[1]}</label>`).join("");
+   dr.innerHTML=`<td></td><td colspan="6"><div class="dwrap"><b>${a.name||"This agent"} — onboarding checklist</b>${chks}<div class="next">${nextAction(a)}</div></div></td>`;
+   tb.appendChild(dr);
+  }
+ });
+}
+function renderAll(){renderDash();renderTable();}
+// events (delegation)
+document.querySelector("#tbl").addEventListener("change",e=>{
+ const t=e.target;
+ if(t.dataset.f!==undefined){AG[t.dataset.i][t.dataset.f]=t.value;save();if(t.dataset.f==="stage"){renderAll();}}
+ if(t.dataset.task!==undefined){AG[t.dataset.task].tasks=AG[t.dataset.task].tasks||{};AG[t.dataset.task].tasks[t.dataset.key]=t.checked;save();renderDash();
+   const dr=t.closest("tr").querySelector(".next");if(dr)dr.textContent=nextAction(AG[t.dataset.task]);}
+});
+document.querySelector("#tbl").addEventListener("click",e=>{
+ if(e.target.dataset.del!==undefined){AG.splice(e.target.dataset.del,1);save();renderAll();}
+ if(e.target.dataset.i!==undefined&&e.target.classList.contains("exp")){const a=AG[e.target.dataset.i];open[a.id]=!open[a.id];renderTable();}
+});
+document.getElementById("add").onclick=()=>{AG.push({id:uid(),name:"",source:"",state:"",stage:"Funnel-Outreach",notes:"",tasks:{}});save();renderAll();};
+document.getElementById("sample").onclick=()=>{if(AG.length&&!confirm("Replace current roster with sample data?"))return;AG=SAMPLE.map((s,i)=>Object.assign({id:uid()+i},JSON.parse(JSON.stringify(s))));save();renderAll();};
+document.getElementById("clear").onclick=()=>{if(confirm("Clear all agents?")){AG=[];open={};save();renderAll();}};
+document.getElementById("search").oninput=renderTable;
+fstage.onchange=renderTable;
+document.getElementById("exp").onclick=()=>{
+ const blob=new Blob([JSON.stringify(AG,null,2)],{type:"application/json"});
+ const u=URL.createObjectURL(blob);const x=document.createElement("a");x.href=u;x.download="family_shield_agents.json";x.click();URL.revokeObjectURL(u);
+};
+document.getElementById("imp").onclick=()=>document.getElementById("impfile").click();
+document.getElementById("impfile").onchange=e=>{
+ const f=e.target.files[0];if(!f)return;const r=new FileReader();
+ r.onload=()=>{try{
+  let data;
+  if(f.name.endsWith(".json")){data=JSON.parse(r.result);}
+  else{const lines=r.result.split(/\r?\n/).filter(x=>x.trim());const h=lines.shift().split(",");
+   data=lines.map(l=>{const c=l.split(",");const o={};h.forEach((k,i)=>o[k.trim().toLowerCase()]=(c[i]||"").trim());
+    return {id:uid(),name:o.name||"",source:o.source||"",state:o.state||"",stage:STAGES.includes(o.stage)?o.stage:"Funnel-Outreach",notes:o.notes||o.why||"",tasks:{}};});}
+  if(Array.isArray(data)){data.forEach(d=>{if(!d.id)d.id=uid();if(!d.tasks)d.tasks={};});AG=data;save();renderAll();alert("Imported "+AG.length+" agents.");}
+ }catch(err){alert("Could not read that file: "+err.message);}};
+ r.readAsText(f);e.target.value="";
+};
+renderAll();
+
+// state lookup
+const tb=document.querySelector("#sttab tbody");
+STATES.forEach(s=>{const tr=document.createElement("tr");tr.dataset.s=s.state.toLowerCase();
+ tr.innerHTML=`<td>${s.state}</td><td>${s.hrs}</td><td>${s.fp}</td><td>${s.vendor}</td><td>${s.notes}</td>`;tb.appendChild(tr);});
+const sq=document.getElementById("stq"),sres=document.getElementById("stres");
+sq.addEventListener("input",()=>{const v=sq.value.trim().toLowerCase();
+ document.querySelectorAll("#sttab tbody tr").forEach(tr=>tr.classList.remove("hit"));
+ if(!v){sres.innerHTML="";return;}
+ const m=STATES.find(s=>s.state.toLowerCase()===v)||STATES.find(s=>s.state.toLowerCase().startsWith(v));
+ if(!m){sres.innerHTML='<div class="box"><div class="val sm">Type a full state name</div></div>';return;}
+ sres.innerHTML=`<div class="box"><div class="lab">${m.state}</div><div class="val">${m.hrs} hrs</div></div>
+  <div class="box"><div class="lab">Fingerprints</div><div class="val">${m.fp}</div></div>
+  <div class="box"><div class="lab">Exam Vendor</div><div class="val sm">${m.vendor}</div></div>
+  <div class="box" style="grid-column:1/-1"><div class="lab">Notes</div><div class="val sm">${m.notes}</div></div>`;
+ const row=[...document.querySelectorAll("#sttab tbody tr")].find(tr=>tr.dataset.s===m.state.toLowerCase());
+ if(row){row.classList.add("hit");row.scrollIntoView({block:"nearest"});}
+});
+// nav highlight
+const navlinks={};document.querySelectorAll("nav a[data-sec]").forEach(a=>navlinks[a.dataset.sec]=a);
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){Object.values(navlinks).forEach(a=>a.classList.remove("active"));const l=navlinks[e.target.id];if(l)l.classList.add("active");}}),{rootMargin:"-15% 0px -75% 0px"});
+document.querySelectorAll("main > [id], section[id]").forEach(s=>io.observe(s));
+document.querySelectorAll("nav a").forEach(a=>a.addEventListener("click",()=>document.querySelector("nav").classList.remove("open")));
+</script>
+</body></html>
